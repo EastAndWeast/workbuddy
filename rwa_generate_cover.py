@@ -36,6 +36,46 @@ Layout specifications:
 - Aspect ratio: strictly 2:3 vertical portrait
 - IMPORTANT: All text must be in Chinese (except the brand name AURELLIX)"""
 
+COVER_PROMPT_RWA_COMMENTARY = """Generate a clean, authoritative vertical cover image for a financial policy analysis publication. Style: premium policy journal meets investigative news magazine, 9:16 portrait orientation.
+
+Layout specifications:
+- Top section: A bold banner with the text "RWA 时评" in large, commanding Chinese typography with subtle rule-of-law decorative elements (scales, columns, or gavel motifs)
+- Below header: the date "{date}" in smaller refined text
+- Center section: A prominent headline area displaying "{focus_title}" as the main investigative feature
+- Below that: a section with key highlights / bullet-style teasers:
+  {teasers}
+- Bottom section: The brand logo "AURELLIX" in clean, sophisticated typography
+- Color scheme: Deep burgundy/wine (#1a0a14) background with brass gold (#c9a84c) and off-white (#f0e6d3) accents, subtle crimson (#8b1a2b) highlights
+- Visual style: Institutional gravitas — marble textures, architectural line work, classical column motifs in abstract form, no photorealistic elements
+- Mood: Serious, authoritative, incisive — like The Economist's special reports or Foreign Affairs cover design
+- Aspect ratio: strictly 2:3 vertical portrait
+- IMPORTANT: All text must be in Chinese (except the brand name AURELLIX)"""
+
+COVER_PROMPT_AI_BLOCKCHAIN = """Generate a clean, futuristic vertical cover image for a tech+finance deep-dive article. Style: modern tech magazine meets crypto-native aesthetic, 9:16 portrait orientation.
+
+Layout specifications:
+- Top section: A bold banner with the text "AI×区块链" in large, modern Chinese typography with subtle circuit-board or neural-network decorative elements
+- Below header: the date "{date}" in smaller refined text
+- Center section: A prominent headline area displaying "{focus_title}" as the main feature story
+- Below that: a section with key highlights / bullet-style teasers:
+  {teasers}
+- Bottom section: The brand logo "AURELLIX" in clean, sophisticated typography
+- Color scheme: Deep space black (#0a0a14) background with electric blue (#00d4ff) and silver (#c0c0d0) accents, subtle purple (#7c3aed) highlights
+- Visual style: Abstract geometric patterns inspired by neural networks and blockchain nodes — glowing connecting lines, hexagonal mesh, gradient nodes, no photorealistic elements
+- Mood: Cutting-edge, intellectual, forward-looking — like MIT Technology Review meets crypto-native media
+- Aspect ratio: strictly 2:3 vertical portrait
+- IMPORTANT: All text must be in Chinese (except the brand name AURELLIX)"""
+
+
+def get_cover_template(brand: str) -> str:
+    """Get the appropriate cover prompt template for the given brand."""
+    templates = {
+        "RWA 早报": COVER_PROMPT_TEMPLATE,
+        "AI×区块链": COVER_PROMPT_AI_BLOCKCHAIN,
+        "RWA 时评": COVER_PROMPT_RWA_COMMENTARY,
+    }
+    return templates.get(brand, COVER_PROMPT_TEMPLATE)
+
 
 # ── 从 Markdown / HTML 提取内容 ────────────────────
 def extract_content(text: str, is_html: bool = False) -> dict:
@@ -61,16 +101,39 @@ def extract_content(text: str, is_html: bool = False) -> dict:
     # ── 实际 MD 格式匹配 ─────────────────────────
     # 格式一: ## 【RWA 早报】2026-05-26  → 然后 ### N. 标题
     # 格式二: # RWA 早报 | 2026-05-26  → 🔥 今日焦点 + 📰 昨日快讯
+    # 中文日期: RWA 时评 | 2026年5月27日
     
-    # 1. 提取标题和日期
-    title_m = re.search(r'【?RWA\s*早报】?\s*(?:\||[|｜])\s*(\d{4}[-/]\d{1,2}[-/]\d{1,2})', text)
+    # 日期正则：支持 2026-05-27 / 2026/5/27 / 2026年5月27日
+    DATE_RE = r'(\d{4}(?:[-/]\d{1,2}[-/]\d{1,2}|年\d{1,2}月\d{1,2}日))'
+    
+    # 1. 提取标题和日期 (RWA 早报 格式)
+    title_m = re.search(rf'【?RWA\s*早报】?\s*(?:\||[|｜])\s*{DATE_RE}', text)
     if not title_m:
-        title_m = re.search(r'【?RWA\s*早报】?\s*(\d{4}[-/]\d{1,2}[-/]\d{1,2})', text)
+        title_m = re.search(rf'【?RWA\s*早报】?\s*{DATE_RE}', text)
     if not title_m:
-        title_m = re.search(r'RWA\s*早报.*?(\d{4}[-/]\d{1,2}[-/]\d{1,2})', text)
+        title_m = re.search(rf'RWA\s*早报.*?{DATE_RE}', text)
+    # AI×区块链 格式
+    if not title_m:
+        title_m = re.search(rf'【?AI\s*[×xX]\s*区块链】?\s*(?:\||[|｜])\s*{DATE_RE}', text)
+    if not title_m:
+        title_m = re.search(rf'【?AI\s*[×xX]\s*区块链】?\s*{DATE_RE}', text)
+    # RWA 时评 格式
+    if not title_m:
+        title_m = re.search(rf'【?RWA\s*时评】?\s*(?:\||[|｜])\s*{DATE_RE}', text)
+    if not title_m:
+        title_m = re.search(rf'【?RWA\s*时评】?\s*{DATE_RE}', text)
     if title_m:
-        info["date"] = title_m.group(1).replace('/', '-')
+        raw_date = title_m.group(1)
+        # 规范化日期：2026年5月27日 → 2026-05-27
+        date_clean = re.sub(r'年|月', '-', raw_date).replace('日', '')
+        info["date"] = re.sub(r'/', '-', date_clean)
         info["title"] = f"RWA 早报 | {info['date']}"
+    
+    # Detect brand from content
+    if re.search(r'【?AI\s*[×xX]\s*区块链】?', text):
+        info["title"] = info.get("title", "").replace("RWA 早报", "AI×区块链")
+    elif re.search(r'【?RWA\s*时评】?', text):
+        info["title"] = info.get("title", "").replace("RWA 早报", "RWA 时评")
     
     # 2. 提取新闻条目：### N. 标题 或 ## N. 标题
     headlines = []
@@ -289,7 +352,12 @@ def main():
     parser.add_argument("source", help="WordPress 文章 URL 或 Markdown 文件路径")
     parser.add_argument("--quality", "-q", default=DEFAULT_Q, choices=["low", "medium", "high"],
                        help=f"图片质量 (默认: {DEFAULT_Q})")
+    parser.add_argument("--brand", "-b", default="RWA 早报",
+                       help="封面品牌模板 (默认: RWA 早报，可选: AI×区块链)")
     args = parser.parse_args()
+    
+    brand = args.brand
+    template = get_cover_template(brand)
     
     # 1. 获取内容
     print(f"[1/4] 获取文章内容...")
@@ -305,7 +373,7 @@ def main():
         print(f"        {t[:60]}")
     
     # 3. 构造 prompt
-    prompt = COVER_PROMPT_TEMPLATE.format(
+    prompt = template.format(
         date=info["date"],
         focus_title=info["focus_title"],
         teasers="\n  ".join(info["teasers"])

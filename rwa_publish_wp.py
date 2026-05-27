@@ -205,7 +205,7 @@ def md_inline_format(text: str) -> str:
     return text
 
 
-def publish_to_wp(title: str, html_content: str) -> dict:
+def publish_to_wp(title: str, html_content: str, category: str = "RWA") -> dict:
     """Publish post to WordPress using XML-RPC (more reliable than REST for larger payloads)."""
     import urllib.request
     import xmlrpc.client
@@ -215,7 +215,7 @@ def publish_to_wp(title: str, html_content: str) -> dict:
         "post_status": "publish",
         "post_title": title,
         "post_content": html_content,
-        "terms_names": {"category": ["RWA"]},
+        "terms_names": {"category": [category]},
     }
     xml_body = xmlrpc.client.dumps(
         (1, "tianao1128", WP_PASS, post_data),
@@ -288,7 +288,7 @@ def main():
     print(f"HTML saved to: {html_path}")
 
     # Publish
-    result = publish_to_wp(title, html_content)
+    result = publish_to_wp(title, html_content, "RWA")
 
     if result:
         post_id = result.get('id', '?')
@@ -302,7 +302,7 @@ def main():
         sys.exit(1)
 
 
-def generate_cover(md_path: str, quality: str = "medium") -> str:
+def generate_cover(md_path: str, quality: str = "medium", brand: str = "RWA 早报") -> str:
     """Generate a cover image for the report."""
     cover_script = os.path.join(SCRIPT_DIR, "rwa_generate_cover.py")
     if not os.path.exists(cover_script):
@@ -310,9 +310,9 @@ def generate_cover(md_path: str, quality: str = "medium") -> str:
         return None
     
     import subprocess
-    print(f"\n[Cover] Generating cover image (quality={quality})...")
+    print(f"\n[Cover] Generating cover image (quality={quality}, brand={brand})...")
     result = subprocess.run(
-        [sys.executable, cover_script, md_path, "--quality", quality],
+        [sys.executable, cover_script, md_path, "--quality", quality, "--brand", brand],
         capture_output=True, text=True, timeout=600
     )
     
@@ -336,6 +336,8 @@ if __name__ == '__main__':
     parser.add_argument("md_path", nargs="?", help="Path to Markdown file")
     parser.add_argument("--generate-cover", action="store_true", help="Generate cover image after publishing")
     parser.add_argument("--cover-quality", default="medium", choices=["low", "medium", "high"])
+    parser.add_argument("--cover-brand", default="RWA 早报", help="Cover brand template (default: RWA 早报)")
+    parser.add_argument("--category", default="RWA", help="WordPress category name (default: RWA)")
     args = parser.parse_args()
     
     # Determine file path
@@ -350,6 +352,8 @@ if __name__ == '__main__':
             print("ERROR: No morning report found for today.")
             print("Usage: python3 rwa_publish_wp.py <path_to_md_file>")
             sys.exit(1)
+
+    category = args.category
 
     # Read Markdown
     with open(md_path, 'r', encoding='utf-8') as f:
@@ -377,7 +381,7 @@ if __name__ == '__main__':
     print(f"HTML saved to: {html_path}")
 
     # Publish
-    result = publish_to_wp(title, html_content)
+    result = publish_to_wp(title, html_content, category)
 
     if not result:
         print("\n❌ Publish failed")
@@ -391,7 +395,7 @@ if __name__ == '__main__':
 
     # Generate cover if requested
     if args.generate_cover:
-        cover_path = generate_cover(md_path, args.cover_quality)
+        cover_path = generate_cover(md_path, args.cover_quality, args.cover_brand)
         if cover_path:
             print(f"\nCOVER_IMAGE={cover_path}")
 

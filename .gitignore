@@ -1,0 +1,27 @@
+# Large binary files (regeneratable)
+*.mp4
+*.png
+rwa_cover_*.png
+rwa_header_*.png
+rwa_morning_cover_*.png
+
+# ZIP archives
+*.zip
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# WordPress test data (may contain credentials)
+wp_post.json
+wp_post_v2.json
+
+# Temporary / test files
+*TEMP_*
+feishu_content.xml
+rwa_article_test.xml

@@ -97,3 +97,28 @@
 8. FinanceFeeds - Qivalis adds 25 banks ahead of planned 2026 launch (May 21)
 
 **注意事项**: 5月24日晚间已覆盖过 ECB vs Qivalis 主题但侧重 ECB 拒绝态度，今日侧重 MiCA 审查制度层面 + Qivalis 作为背景，视角不同。CLARITY Act 5月26日已深度覆盖，今日不重复。
+
+---
+
+## 2026-05-28 (周四)
+
+**状态**: 成功
+
+**执行摘要**:
+- 完成6轮搜索 + 6次深度文章抓取
+- 选定2大核心主题：
+  ① **Ondo Finance 创始人 Nathan Allman 突然离世**（5月25日，32岁）——RWA 行业首次面临创始人继任考验。Ondo 管理约38.6亿美元链上资产，原总裁 Ian De Bode（前麦肯锡合伙人）即时接任 CEO。ONDO 代币仅跌约2%，市场反应克制。分析重点放在 RWA 行业治理结构系统性脆弱——头部项目均高度依赖创始人个人，缺乏真正的组织韧性。
+  ② **BIS Project Agorá 进入真实价值跨境支付测试**（5月28日）——美联储纽约分行、英格兰银行、日本银行等7大央行+40多家私人机构，首次用代币化央行准备金和商业银行存款做实打实跨境结算。辅以英国 BoE/FCA 联合代币化框架（5月18日，2028年同步服务/DIGIT 数字金边债券/DSS 沙盒），构成"央行代币化从模拟走向真金白银"的叙事线。
+- 文章将两个主题串成"从人治走向制治"的叙事：Allman 之死暴露行业脆弱面，BIS 和英国央行展示制度底座成形。
+- 文件已保存：rwa_evening_20260528.md
+
+**新闻来源**:
+1. FinanceFeeds - Ondo Finance Founder Nathan Allman Dies Unexpectedly (May 26)
+2. CryptoTimes - Ondo Finance Founder Nathan Allman Passes Away (May 26)
+3. The Cryptonomist - Nathan Allman Ondo Finance death (May 27)
+4. CryptoBriefing - BIS and seven central banks begin real-value testing of Project Agorá (May 28)
+5. LiveBitcoinNews - BIS Pushes Tokenized Cross-Border Payments Into Real-Value Phase (May 28)
+6. CryptoTimes - Bank of England and FCA Accelerate Joint Tokenization Framework (May 18)
+7. Bank of England - Proposed regulatory regime for sterling-denominated systemic stablecoins (May 21)
+
+**注意事项**: 英国 BoE/FCA 框架（5月18日）距今10天，作为 BIS Agorá 的制度级补充而非独立主题。Ondo 事件非传统"政策/监管"新闻，但作为 RWA 行业最大平台创始人的离世，其治理结构意义远超一般行业动态。

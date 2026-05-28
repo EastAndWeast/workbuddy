@@ -1,5 +1,13 @@
 # RWA 时评飞书发布 - 执行历史
 
+## 2026-05-28 19:05
+- **结果**: ✅ 成功
+- **文件**: `rwa_evening_20260528.md`（size=11117）
+- **轮询**: Python 脚本轮询，第1次检测即 READY
+- **飞书文档**: https://my.feishu.cn/docx/QEtsdmFElo3vyRx3JkucIO1rnKg
+- **群消息**: 已发送至 `oc_29c8d746be4f75efd4eca6f5286819ed`，message_id: `om_x100b6eb6076a2c84b3d7583f6ff4979`
+- **状态**: 等待用户回复「通过」以触发 WordPress 发布
+
 ## 2026-05-27 19:05
 - **结果**: 跳过 — `rwa_evening_20260527.md` 未生成
 - **原因**: 19:00 时评文件不存在，上游生成任务可能未产出

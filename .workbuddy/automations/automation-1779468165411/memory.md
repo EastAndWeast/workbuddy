@@ -122,3 +122,29 @@
 7. Bank of England - Proposed regulatory regime for sterling-denominated systemic stablecoins (May 21)
 
 **注意事项**: 英国 BoE/FCA 框架（5月18日）距今10天，作为 BIS Agorá 的制度级补充而非独立主题。Ondo 事件非传统"政策/监管"新闻，但作为 RWA 行业最大平台创始人的离世，其治理结构意义远超一般行业动态。
+
+---
+
+## 2026-05-29 (周五)
+
+**状态**: 成功
+
+**执行摘要**:
+- 完成7轮搜索 + 5次深度文章抓取
+- 选定2大核心主题：
+  ① **CFTC 公开认错并撤销 Gemini 和解案**（5月28日）——CFTC 与 Gemini 联合申请撤销 2025 年 1 月和解协议（500万美元罚款+永久禁令），内部审查发现六大问题：举报人不可信、打错目标、证据薄弱、对委员隐瞒证据、滥用特权阻止取证、以监管权力勒索和解。80+案 vs 2案的数据对比揭示两届政府执法哲学彻底翻转。Winklevoss-特朗普政治关联加深了"拨乱反正 vs 政治清算"的争议。
+  ② **Aave Labs 获英国 FCA 加密资产注册**（5月28日）——全球第二大 DeFi 协议（136亿美元 TVL）旗下 Push 子公司获 FCA 加密交易所提供商注册，可提供零手续费法币-稳定币兑换。与英国同步推进的代币化批发市场框架（2028 同步结算、DIGIT 数字金边债券）形成"规则吸引"策略。
+- 文章以"一退一进"为主线：美国用撤案释放善意但制度脆弱，英国用发牌建立规则但门槛更高。对中国 RWA 从业者的核心启示：选择监管框架要看法律根基而非政治风向。
+- 文件已保存：rwa_evening_20260529.md
+
+**新闻来源**:
+1. Crypto Times - CFTC Says It Should Never Have Sued Gemini (May 28)
+2. CoinLaw - CFTC and Gemini Ask Court to Undo $5M Settlement (May 28)
+3. 腾讯新闻 - 美CFTC拟撤销对Gemini处罚令 (May 29)
+4. PANews - CFTC承认诉Gemini案本不应提起 (May 28)
+5. Banking Dive - CFTC asks judge to vacate $5M Gemini penalty (May 28)
+6. CoinTelegraph - Aave Labs' Push Gains UK FCA Crypto Registration (May 28)
+7. Crypto Times - Aave's UK Subsidiaries Receive FCA Approval (May 28)
+8. CoinAlertNews - SEC Chair Atkins Ends Anti-Crypto Era (May 28)
+
+**注意事项**: 今日两大主题均在5月28日发生/公布。CFTC Gemini 案与 5/26 覆盖的 SEC 代币化股票主题不同，侧重执法哲学翻转而非具体政策。Aave 获牌与 5/28 覆盖的 BoE/FCA 框架形成互补——前者是"建制度"，后者是"发牌照"。CLARITY Act 进展（5/29 特朗普推动永久化）因 5/24 和 5/26 已深度覆盖，今日不纳入。

@@ -13,3 +13,8 @@
 - 飞书文档：https://my.feishu.cn/docx/QHNDd4eOtoNumSxypcgcgPydnWg
 - 审核消息已发送至群 `oc_b81de3a111b45394b2c1dca20dc33038`（message_id: om_x100b6eb9b30df0a8b4addaef7fb48cd）
 - 状态：等待群内「通过」审批
+
+## 2026-05-30 08:52
+
+- 源文件 `rwa_industry_20260530.md` 轮询超时（20次/10分钟），大小始终为869字节（<1000）
+- 状态：⚠️ 行业早报文件未生成，跳过发布

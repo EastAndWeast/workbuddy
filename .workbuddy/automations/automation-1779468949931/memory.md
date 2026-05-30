@@ -3,6 +3,21 @@
 
 ## 最近执行记录
 
+### 2026-05-30 07:00
+- **执行状态**: ✅ 成功
+- **新闻日期**: 2026-05-28/29
+- **搜索轮数**: 3轮（综合速览英文、监管/基础设施、国债/BlackRock + 2轮深度抓取）
+- **生成条数**: 5条
+- **保存文件**: `/Users/bruce/WorkBuddy/Claw/rwa_morning_20260530.md`
+- **主要新闻来源**:
+  - FinTech Business Asia: Realio 推出 Freehold RWA Tokenization Studio，免费开放端到端资产代币化 (2026-05-28)
+  - Beyond Tomorrow: 链上代币化美国国债规模突破50亿美元，系统梳理四大风险维度 (2026-05-28)
+  - InvestaX / LinkedIn: 5月RWA月报复盘，剔除稳定币后规模34亿美元，同比增3倍 (2026-05-29)
+  - CNBC + InvestaX: Circle 完成 Arc 区块链 2.22亿美元代币预售，BlackRock、Apollo 参投 (2026-05-11/29复盘)
+  - InvestaX: Bullish 42亿美元收购 Equiniti，代币化股票基础设施瓶颈获突破 (2026-05-05/29复盘)
+- **今日焦点**: Realio Freehold 免费代币化工具 + 国债50亿风险分析 + Circle Arc 2.22亿融资 + Bullish/Equiniti 收购 + 5月RWA月报复盘
+- **问题**: 无
+
 ### 2026-05-28 07:00
 - **执行状态**: ✅ 成功
 - **新闻日期**: 2026-05-25/26/27

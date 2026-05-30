@@ -148,3 +148,26 @@
 8. CoinAlertNews - SEC Chair Atkins Ends Anti-Crypto Era (May 28)
 
 **注意事项**: 今日两大主题均在5月28日发生/公布。CFTC Gemini 案与 5/26 覆盖的 SEC 代币化股票主题不同，侧重执法哲学翻转而非具体政策。Aave 获牌与 5/28 覆盖的 BoE/FCA 框架形成互补——前者是"建制度"，后者是"发牌照"。CLARITY Act 进展（5/29 特朗普推动永久化）因 5/24 和 5/26 已深度覆盖，今日不纳入。
+
+---
+
+## 2026-05-30 (周六)
+
+**状态**: 成功
+
+**执行摘要**:
+- 完成9轮搜索 + 3次深度文章抓取（CoinTelegraph、CryptoBriefing、CoinGape）
+- 因过去24小时仅1个重大政策/监管事件，选择**单主题深度分析**：
+  ① **JPMorgan CEO 戴蒙向 Coinbase/CLARITY Act 全面宣战**（5月30日）——戴蒙在Fox Business节目上公开骂阿姆斯特朗"He is full of shit"，宣布银行将"战斗到底"阻止CLARITY法案以当前版本通过。核心争议：稳定币是否允许支付活动驱动的奖励（当前折中方案：禁止被动收益，允许基于活动的奖励）。戴蒙要求加密公司提供收益产品必须申请银行牌照。Coinbase在1月撤回支持后，5月1日因妥协方案恢复支持。
+- 文章以三层分析框架展开：① 人身攻击→私人恩怨公开化（达沃斯冲突回顾）；② 核心诉求→机构牌照门槛 vs 功能监管的根本分歧；③ 利益计算→银行存款流失风险。政治维度分析覆盖特朗普"未来验证"承诺、两党支持瓦解（仅2民主党支持）、Lummis vs Dimon对决。最后落地中国RWA从业者启示：美国立法结果将决定全球RWA监管范式走向"归银行管"还是"功能监管"。
+- 文件已保存：rwa_evening_20260530.md + rwa_evening_20260530.html
+
+**新闻来源**:
+1. CoinTelegraph - JPMorgan CEO Slams Coinbase, Says Banks Will Continue Fighting CLARITY (May 30, 13h ago)
+2. CryptoBriefing - Dimon criticizes Armstrong, CLARITY Act stablecoin yield details (May 30, 15h ago)
+3. CoinGape - CLARITY Act: JPMorgan CEO Jamie Dimon Vows to Fight Stablecoin Provisions (May 30, 16h ago)
+4. BeInCrypto - Coinbase vs. JPMorgan Feud Escalates Over the CLARITY Act (May 30, 3h ago)
+5. The Block - JPMorgan CEO Jamie Dimon blasts Coinbase's Brian Armstrong (May 30, 15h ago)
+6. CoinEdition - Live crypto regulation feed (May 30)
+
+**注意事项**: 今日为周六，新闻量偏少。CLARITY Act主题在5/24（Emmer表态）、5/26（立法进度+市场反应）、5/29（特朗普推动永久化）均有覆盖，但今日聚焦**戴蒙亲自下场的人身攻击+银行全面宣战**，这是全新的剧情升级——从立法博弈升级为行业巨头间的公开战争。文章以"机构牌照门槛 vs 功能监管"为主线，区别于前几日的立法时间线叙事。

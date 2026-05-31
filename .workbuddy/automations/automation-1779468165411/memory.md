@@ -171,3 +171,27 @@
 6. CoinEdition - Live crypto regulation feed (May 30)
 
 **注意事项**: 今日为周六，新闻量偏少。CLARITY Act主题在5/24（Emmer表态）、5/26（立法进度+市场反应）、5/29（特朗普推动永久化）均有覆盖，但今日聚焦**戴蒙亲自下场的人身攻击+银行全面宣战**，这是全新的剧情升级——从立法博弈升级为行业巨头间的公开战争。文章以"机构牌照门槛 vs 功能监管"为主线，区别于前几日的立法时间线叙事。
+
+---
+
+## 2026-05-31 (周日)
+
+**状态**: 成功
+
+**执行摘要**:
+- 完成10轮搜索 + 3次深度文章抓取（LiveBitcoinNews、TokenPost、CoinFomania），周日新闻极淡
+- 选定单主题深度分析，辅以一个附篇：
+  ① **CFTC 批准美国首个受监管比特币永续合约**（5月29日，Kalshi BTCPERP）——24小时申请获批，CFTC 主席 Selig 称其为"历史性行动"。核心 RWA 角度：CFTC 在批准令中明确警告"永续合约设计可能不适合所有资产类别"，为 RWA 衍生品划下分界线。分析覆盖 RWA 资产类别（国债/房地产/私募股权）的永续合约可行性、四种替代衍生品路径、以及"先申请让CFTC说不"的战略建议。
+  ② **SEC 起诉 AI 加密庞氏骗局**（5月29日，Nathan Fuller，$12.3M）——作为"创新友好≠不管欺诈"的对比案例，与 CFTC 绿灯形成"双轨监管"叙事。
+- 文章以过去72小时三件事（Gemini撤案→BTC永续获批→AI庞氏被诉）构建"打开前门，守住底线"的监管框架分析。
+- 文件已保存：rwa_evening_20260531.md + rwa_evening_20260531.html
+
+**新闻来源**:
+1. CFTC Order of Approval - Kalshi BTCPERP (May 29)
+2. LiveBitcoinNews - CFTC Approves First Regulated Bitcoin Perpetuals on Kalshi (May 29)
+3. TokenPost - CFTC Approves Bitcoin Perpetual Contract, SEC Charges AI Fraud (May 30)
+4. DepoCrypto - Kalshi Receives CFTC Approval to Launch Bitcoin Perpetual Futures (May 29)
+5. SEC Litigation Release LR-26558 - SEC v. Nathan Fuller (May 29)
+6. CoinFomania - Jamie Dimon Slams Brian Armstrong Amid Clarity Act Debate (May 30)
+
+**注意事项**: 周日新闻极度匮乏。CFTC BTC永续批准（5月29日）在上周五晚间（5月29日19:00）发布时尚未公开报道，因此作为今日主要分析对象具有时效性。与5/29覆盖的CFTC Gemini撤案形成"48小时监管180度转身"的叙事线。本周七天的晚间时评全部完成：5/24 ECB vs Qivalis、5/25 Fed支付账户+SEC代币化股票、5/26 SEC代币化股票被狙+CLARITY生死时速、5/27 MiCA审查+斯图加特Seturion、5/28 Ondo创始人离世+BIS Agorá、5/29 CFTC Gemini撤案+Aave FCA注册、5/30 Dimon宣战Coinbase、5/31 CFTC BTC永续获批。

@@ -3,6 +3,21 @@
 
 ## 最近执行记录
 
+### 2026-06-01 07:00
+- **执行状态**: ✅ 成功
+- **新闻日期**: 2026-05-27/28/29
+- **搜索轮数**: 3轮（综合速览英文、监管/SEC+CFTC、国债/BlackRock/Ondo）+ 3轮深度抓取（WebFetch）
+- **生成条数**: 5条
+- **保存文件**: `/Users/bruce/WorkBuddy/Claw/rwa_morning_20260601.md`
+- **主要新闻来源**:
+  - StablecoinInsider: BUIDL突破30亿美元AUM，RWA赛道进入规模化拐点 (2026-05-27)
+  - G. Dowd Law: SEC+CFTC联合发布加密资产五分类框架，RWA监管边界明确 (2026-05-24)
+  - DEXTools: BlackRock提交两份新代币化基金申请，BUIDL达23亿美元 (2026-05-25)
+  - StablecoinInsider: Franklin Templeton BENJI部署至第8条链 (2026-05-27)
+  - StablecoinInsider: Ondo USDY流通量突破10亿美元，DeFi国库收益型资产趋势确立 (2026-05-27)
+- **今日焦点**: BUIDL 30亿 + SEC/CFTC五分类框架 + BENJI多链扩张 + USDY 10亿 + 中国RWA新规落地四月复盘
+- **问题**: 无
+
 ### 2026-05-30 07:00
 - **执行状态**: ✅ 成功
 - **新闻日期**: 2026-05-28/29

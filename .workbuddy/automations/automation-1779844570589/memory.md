@@ -31,3 +31,12 @@
 - 原因：`rwa_morning_20260531.md` 在 20 次轮询（10 分钟）内未出现，文件大小始终为 0
 - 操作：输出警告，交由后续兜底任务接管
 - 早报文件预期路径：`/Users/bruce/WorkBuddy/Claw/rwa_morning_20260531.md`
+
+## 2026-06-01 07:05
+
+- 状态：**成功**
+- 文件：`rwa_morning_20260601.md`（约 12.4 KB）
+- 飞书文档：https://my.feishu.cn/docx/TRZAd1HFHojZjNx0mzjcP2HEnUd
+- 群消息：已发送至 `oc_b81de3a111b45394b2c1dca20dc33038`
+- 消息 ID：`om_x100b6ef844c718a8b30a78cf32c6ba2`
+- 下一步：等待用户回复「通过」触发 WordPress 发布

@@ -195,3 +195,27 @@
 6. CoinFomania - Jamie Dimon Slams Brian Armstrong Amid Clarity Act Debate (May 30)
 
 **注意事项**: 周日新闻极度匮乏。CFTC BTC永续批准（5月29日）在上周五晚间（5月29日19:00）发布时尚未公开报道，因此作为今日主要分析对象具有时效性。与5/29覆盖的CFTC Gemini撤案形成"48小时监管180度转身"的叙事线。本周七天的晚间时评全部完成：5/24 ECB vs Qivalis、5/25 Fed支付账户+SEC代币化股票、5/26 SEC代币化股票被狙+CLARITY生死时速、5/27 MiCA审查+斯图加特Seturion、5/28 Ondo创始人离世+BIS Agorá、5/29 CFTC Gemini撤案+Aave FCA注册、5/30 Dimon宣战Coinbase、5/31 CFTC BTC永续获批。
+
+---
+
+## 2026-06-01 (周一)
+
+**状态**: 成功
+
+**执行摘要**:
+- 完成7轮搜索 + 3次深度文章抓取（ECB官方演讲全文、Reuters/Star报道、Quasa分析）
+- 选定2大核心主题（以Schnabel演讲为主线，RBI CBDC为呼应）：
+  ① **ECB执委Schnabel「稳定币是新的欧洲美元」里程碑演讲**（6月1日，首尔）——构建了金融稳定/货币传导/国际货币秩序「三重威胁」分析框架。核心判断：美元稳定币通过「网络效应+先发优势」正固化美元霸权，数字欧元是欧洲唯一战略回应，时间表锚定2029。深度对比了美国（GENIUS法案→私人稳定币路径）与欧洲（数字欧元→公共CBDC路径）的战略分歧。
+  ② **RBI跨境CBDC试点计划**（5月30日RBI年报）——印度数字卢比流通量萎缩至77.17亿卢比（~9200万美元），但RBI逆势宣布FY27启动与新加坡、阿联酋跨境CBDC试点。分析从Schnabel框架切入：新兴市场CBDC不是技术秀而是货币防御，侨汇降本+去美元化支付通道+对冲稳定币风险三重逻辑。
+- 文章将两个主题串成「CBDC从技术实验升级为货币主权保卫战」的统一叙事，最后落地中国RWA从业者三层启示：数字人民币RWA接口、42号文防火墙逻辑、多极CBDC对RWA流动性的意义。
+- 文件已保存：rwa_evening_20260601.md
+
+**新闻来源**:
+1. ECB - Isabel Schnabel演讲全文: From money market funds to stablecoins (June 1, 2026)
+2. Reuters/Star - Rising stablecoin use could cement dollar dominance (June 1, 2026)
+3. Quasa - ECB's Schnabel: Digital Euro Is Europe's Answer to Dollar Stablecoins (June 1, 2026)
+4. ET Now - RBI plans cross-border digital rupee pilots (May 30, 2026)
+5. MoneyControl - RBI to explore CBDC pilot in cross-border transactions (May 30, 2026)
+6. Angel One - RBI Plans Cross-Border CBDC with Singapore, UAE (May 31, 2026)
+
+**注意事项**: Schnabel演讲是今天（6月1日）发布的最重要的RWA/数字货币政策事件。稳定币作为RWA底层结算基础设施，其监管框架和地缘竞争直接决定RWA生态的制度环境。RBI跨境CBDC虽非「新鲜出炉」但距RBI年报发布仅1-2天，作为Schnabel分析框架的新兴市场实践案例纳入。与5/24-5/27覆盖的MiCA审查、ECB vs Qivalis等欧洲话题一脉相承但视角完全不同——此前是「监管制度设计」，今天是「全球货币体系的地缘竞争」。

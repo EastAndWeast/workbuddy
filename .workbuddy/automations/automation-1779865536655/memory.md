@@ -18,3 +18,10 @@
 
 - 源文件 `rwa_industry_20260530.md` 轮询超时（20次/10分钟），大小始终为869字节（<1000）
 - 状态：⚠️ 行业早报文件未生成，跳过发布
+
+## 2026-06-01 08:42
+
+- 源文件 `rwa_industry_20260601.md` 已就绪（1.1 KB），无需轮询等待
+- 飞书文档：https://my.feishu.cn/docx/Smmcd3GJkoX3PqxDfp9c6bGln3c
+- 审核消息已发送至群 `oc_b81de3a111b45394b2c1dca20dc33038`（message_id: om_x100b6ef9198a6cacb204368f236e7e2）
+- 状态：等待群内「通过」审批

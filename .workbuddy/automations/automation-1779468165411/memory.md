@@ -219,3 +219,26 @@
 6. Angel One - RBI Plans Cross-Border CBDC with Singapore, UAE (May 31, 2026)
 
 **注意事项**: Schnabel演讲是今天（6月1日）发布的最重要的RWA/数字货币政策事件。稳定币作为RWA底层结算基础设施，其监管框架和地缘竞争直接决定RWA生态的制度环境。RBI跨境CBDC虽非「新鲜出炉」但距RBI年报发布仅1-2天，作为Schnabel分析框架的新兴市场实践案例纳入。与5/24-5/27覆盖的MiCA审查、ECB vs Qivalis等欧洲话题一脉相承但视角完全不同——此前是「监管制度设计」，今天是「全球货币体系的地缘竞争」。
+
+---
+
+## 2026-06-02 (周二)
+
+**状态**: 成功
+
+**执行摘要**:
+- 完成7轮搜索 + 3次深度文章抓取（Paxos官方新闻稿、CryptoBriefing、CoinTelegraph）
+- 选定2大核心主题（以Paxos SEC清算机构注册为主线，法国AMF MiCA截止日期为对比）：
+  ① **Paxos成为美国首家区块链原生清算机构**（5月28日SEC批准，6月1日Paxos发布新闻稿）——PSSC依据1934年《证券交易法》第17A条获注册清算机构资格，七年监管路径（2019无异议函→2020试点→2026正式注册），实现同日结算能力。核心RWA角度：代币化证券有了合规的清算结算"终点站"，这是RWA市场基础设施最关键的一块制度拼图。分析覆盖Paxos股东/客户格局（PayPal、Interactive Brokers、Mastercard、OCC信托牌照）、"成为华尔街新管道"的策略路径、以及对中国RWA从业者的启示。
+  ② **法国AMF设定6月30日MiCA牌照截止日期**（5月28日）——约90家注册DASP中仅30%提交申请、40%不打算申请、30%未回应，70%+公司将无法在截止日前合规。作为「美国修路 vs 欧盟设卡」的对比案例，分析ESMA vs 成员国权力张力、MiCA 2.0前的政治博弈。
+- 文章将两个主题串成「受监管的基础设施」的统一叙事：美国用七年慢工培养合规清算层，欧盟用截止日期快速清场净化市场，两条路最终指向同一个终点。
+- 文件已保存：rwa_evening_20260602.md + rwa_evening_20260602.html
+
+**新闻来源**:
+1. Paxos 官方新闻稿 - SEC Registers Paxos Securities Settlement Company as a Clearing Agency (June 1, 2026发布；May 28, 2026批准)
+2. Crypto Briefing - Paxos becomes first blockchain-native clearing agency approved by SEC (May 29, 2026)
+3. CoinTelegraph - France's AMF regulator sets June 30 deadline for MiCA licensing (May 28, 2026)
+4. Crypto Briefing - French Financial Markets Authority sets June 30 deadline for MiCA licensing (May 28, 2026)
+5. CoinPaprika - ECB Warns Stablecoins Risk Financial Stability and Dollar Dominance (June 2, 2026)
+
+**注意事项**: Paxos SEC批准是5月28日的事件，但Paxos官方新闻稿于6月1日发布，此前未被本系列覆盖。今日Schnabel演讲的后续报道（ECB稳定币风险警告）与昨日主题高度重叠，故未纳入独立分析，仅作为背景参考。法国AMF故事距发布时间5天但6月30日截止日期临近，作为对比案例具有时效性。今日两大主题在叙事逻辑上高度互补——美国建设基础设施、欧盟执行市场准入——形成「全球RWA监管从设计进入运营」的清晰信号。

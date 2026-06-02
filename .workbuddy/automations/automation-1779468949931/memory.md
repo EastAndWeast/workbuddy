@@ -3,6 +3,23 @@
 
 ## 最近执行记录
 
+### 2026-06-02 07:00
+- **执行状态**: ✅ 成功
+- **新闻日期**: 2026-06-01 + 2026-05-04/05/06
+- **搜索轮数**: 5轮（综合速览英文、监管/基础设施、国债/BlackRock、中文补充、深度抓取）
+- **生成条数**: 5条
+- **保存文件**: `/Users/bruce/WorkBuddy/Claw/rwa_morning_20260602.md`
+- **主要新闻来源**:
+  - The Manila Times: Bitget 推出 Reality 平台，RWA 代币化进入交易所主战场 (2026-06-01)
+  - LinkedIn - InvestaX: DTCC 宣布 7 月启动代币化证券有限生产交易，50+ 家机构参与 (2026-05-04)
+  - LinkedIn - InvestaX: Bullish 42 亿美元收购 Equiniti，解决代币化股票基础设施瓶颈 (2026-05-05)
+  - LinkedIn - InvestaX: Ondo Finance、摩根大通 Kinexys、万事达卡、Ripple 完成首笔跨境代币化美国国债赎回结算 (2026-05-06)
+  - LinkedIn - InvestaX: 美国《GENIUS 法案》推动稳定币资本流向 RWA，生息稳定币规模预计突破 500 亿美元 (2026 年背景)
+- **今日焦点**: Bitget Reality 平台上线 + DTCC 7月时间表 + Bullish/Equiniti 收购 + Ondo/JPM 跨境结算 + GENIUS 法案影响
+- **WordPress发布**: ✅ 已发布，Post ID: 590，封面图 Media ID: 591
+- **WordPress链接**: https://www.tianao1128.online/2026/06/02/%e3%80%90rwa-%e6%97%a9%e6%8a%a5%e3%80%912026%e5%b9%b46%e6%9c%882%e6%97%a5/
+- **问题**: 封面图首次上传失败（JSON base64方式返回Media ID: None），改用 multipart form 成功上传
+
 ### 2026-06-01 07:00
 - **执行状态**: ✅ 成功
 - **新闻日期**: 2026-05-27/28/29

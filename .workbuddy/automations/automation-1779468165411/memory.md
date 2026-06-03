@@ -242,3 +242,29 @@
 5. CoinPaprika - ECB Warns Stablecoins Risk Financial Stability and Dollar Dominance (June 2, 2026)
 
 **注意事项**: Paxos SEC批准是5月28日的事件，但Paxos官方新闻稿于6月1日发布，此前未被本系列覆盖。今日Schnabel演讲的后续报道（ECB稳定币风险警告）与昨日主题高度重叠，故未纳入独立分析，仅作为背景参考。法国AMF故事距发布时间5天但6月30日截止日期临近，作为对比案例具有时效性。今日两大主题在叙事逻辑上高度互补——美国建设基础设施、欧盟执行市场准入——形成「全球RWA监管从设计进入运营」的清晰信号。
+
+---
+
+## 2026-06-03 (周三)
+
+**状态**: 成功
+
+**执行摘要**:
+- 完成5轮搜索 + 5次深度文章抓取（BMMagazine、FT Adviser、ParliamentToday、CryptoBriefing、Finadium）
+- 选定2大核心主题，以「英国内部纠结 vs 美欧已经协调」为统一叙事线：
+  ① **英国上议院发布《Stablecoins: waiting for regulation》报告**（6月3日）——跨党派委员会直接叫板英格兰央行三项核心设计：40%无息存款要求（国际异类）、预设持有限额（扼杀创新）、商业银行隔离发行（自断手脚）。报告提出8项具体建议，核心立场是"use-case agnostic"框架。实质效果：为央行最终规则设计施加减压阀，40%无息条款大概率被调低。
+  ② **NYDFS与EBA签署首个跨大西洋稳定币监管MoU**（6月2日）——建立正式信息共享和危机协调框架，MiCA合规与NYDFS标准实现互认路径。与英国报告形成鲜明对比：美欧在造桥，英国在画线。
+- 文章以「造桥 vs 画线」为核心隐喻，分析「不互认的监管制度是新的资本管制」。最后落地中国RWA从业者三重启示：监管时间差是窗口、互认是下一阶段主题、稳定币是RWA结算层而非竞品。
+- 文件已保存：rwa_evening_20260603.md + rwa_evening_20260603.html
+
+**新闻来源**:
+1. UK Parliament - House of Lords: Stablecoins: waiting for regulation (published June 3, 2026)
+2. ParliamentToday - Stablecoin regulation must not be delayed (June 3, 2026)
+3. FT Adviser - Lords urge regulators to act on stablecoins (June 3, 2026)
+4. BM Magazine - Stablecoin Regulation UK: Lords Warn Treasury Not to Delay (June 3, 2026)
+5. CryptoBriefing - NYDFS and EBA forge transatlantic stablecoin oversight partnership (June 2, 2026)
+6. Finadium - NYDFS and EBA sign MoU for stablecoin cross-border activity (June 2, 2026)
+7. NYDFS - MoU原文 (June 2, 2026)
+8. CoinAlertNews - NYDFS and EBA Forge Transatlantic Stablecoin Supervision Pact (June 2, 2026)
+
+**注意事项**: 两大事件在48小时内先后发生（NYDFS-EBA MoU 6月2日→UK报告6月3日），时间线本身的对比构成了天然叙事框架。UK报告中对央行40%无息存款的批评与5/27 MiCA审查中"稳定币利息禁令"的讨论形成跨大西洋监管对比。CLARITY Act因5/24、5/26、5/30已三次覆盖，今日不重复。

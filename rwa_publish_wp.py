@@ -13,14 +13,20 @@ import re
 import sys
 import os
 import base64
+import dotenv
 from datetime import datetime, timezone, timedelta
 
-# --- Config ---
-WP_URL = "https://www.tianao1128.online/wp-json/wp/v2/posts"
-WP_USER = "tianao1128"
-WP_PASS = "Z0IfWp8I2PNdKEeDgopRCXmU"
-WP_CATEGORY = 4
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+# --- Load .env from workspace root ---
+_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+dotenv.load_dotenv(os.path.join(_SCRIPT_DIR, ".env"))
+
+# --- Config (from env, with fallbacks) ---
+WP_URL = os.getenv("WP_URL", "https://www.tianao1128.online/wp-json/wp/v2/posts")
+WP_XMLRPC_URL = os.getenv("WP_XMLRPC_URL", "https://www.tianao1128.online/xmlrpc.php")
+WP_USER = os.getenv("WP_USER", "tianao1128")
+WP_PASS = os.getenv("WP_PASS", "")
+WP_CATEGORY = int(os.getenv("WP_CATEGORY_ID", "4"))
+SCRIPT_DIR = _SCRIPT_DIR
 
 
 def find_morning_report():
@@ -218,12 +224,12 @@ def publish_to_wp(title: str, html_content: str, category: str = "RWA") -> dict:
         "terms_names": {"category": [category]},
     }
     xml_body = xmlrpc.client.dumps(
-        (1, "tianao1128", WP_PASS, post_data),
+        (1, WP_USER, WP_PASS, post_data),
         methodname="wp.newPost",
     )
 
     req = urllib.request.Request(
-        "https://www.tianao1128.online/xmlrpc.php",
+        WP_XMLRPC_URL,
         data=xml_body.encode("utf-8"),
         headers={
             "Content-Type": "text/xml",

@@ -6,19 +6,23 @@ RWA 早报封面图生成脚本
 
 输入可以是 WordPress 文章链接或本地 Markdown 文件。
 """
-import sys, os, re, json, base64, requests, time
+import sys, os, re, json, base64, requests, time, dotenv
 from datetime import datetime
 
+# ── Load .env from workspace root ──────────────────────
+_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+dotenv.load_dotenv(os.path.join(_SCRIPT_DIR, ".env"))
+
 # ── 配置 ──────────────────────────────────────────
-API_URL     = "https://openclaw-api.com/v1/images/generations"
-API_KEY     = "sk-Ah7eNGHDCBefNXejDZ6U10rcuHbAQ8yGPTz8kQqCKRONmH5U"
-OUTPUT_DIR  = os.path.dirname(os.path.abspath(__file__))
+API_URL     = os.getenv("COVER_API_URL", "https://openclaw-api.com/v1/images/generations")
+API_KEY     = os.getenv("COVER_API_KEY", "")
+OUTPUT_DIR  = _SCRIPT_DIR
 IMAGE_SIZE  = "1024x1536"       # 2:3 竖版长图
 DEFAULT_Q   = "low"             # low/medium/high，建议 prod 用 medium
 MAX_RETRIES = 2                 # API 调用重试次数
 
-WP_USER = "tianao1128"
-WP_PASS = "Z0IfWp8I2PNdKEeDgopRCXmU"
+WP_USER = os.getenv("WP_USER", "tianao1128")
+WP_PASS = os.getenv("WP_PASS", "")
 
 # ── Prompt 模板 ───────────────────────────────────
 COVER_PROMPT_TEMPLATE = """Generate a clean, professional vertical cover image for a daily financial newsletter. Style: modern morning news magazine cover, 9:16 portrait orientation.
@@ -197,7 +201,7 @@ def fetch_content(source: str) -> tuple:
                     from base64 import b64encode
                     credentials = b64encode(f"{WP_USER}:{WP_PASS}".encode()).decode()
                     resp = requests.get(
-                        f"https://www.tianao1128.online/wp-json/wp/v2/posts",
+                        f"{os.getenv('WP_URL', 'https://www.tianao1128.online/wp-json/wp/v2/posts')}",
                         params={"slug": slug},
                         headers={"Authorization": f"Basic {credentials}"},
                         timeout=15
@@ -216,7 +220,7 @@ def fetch_content(source: str) -> tuple:
                 from base64 import b64encode
                 credentials = b64encode(f"{WP_USER}:{WP_PASS}".encode()).decode()
                 resp = requests.get(
-                    f"https://www.tianao1128.online/wp-json/wp/v2/posts/{post_id}",
+                    f"{os.getenv('WP_URL', 'https://www.tianao1128.online/wp-json/wp/v2/posts')}/{post_id}",
                     headers={"Authorization": f"Basic {credentials}"},
                     timeout=15
                 )

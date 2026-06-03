@@ -10,14 +10,19 @@ import json
 import time
 import subprocess
 import re
+import dotenv
 from datetime import datetime
 
-# Config
-FEISHU_APP_ID = "cli_aa9ac6cf93385cb5"
-FEISHU_APP_SECRET = "9N9vyRWWX6CZZK4F3RPCEcw03y78Wdxr"
-WP_URL = "https://www.tianao1128.online/wp-json/wp/v2"
-WP_USER = "tianao1128"
-WP_PASS = "Z0If Wp8I2PNdKEeDgopRCXmU"
+# Load .env from workspace root
+_SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+dotenv.load_dotenv(os.path.join(_SCRIPT_DIR, ".env"))
+
+# Config (from env, with fallbacks)
+FEISHU_APP_ID = os.getenv("FEISHU_APP_ID", "")
+FEISHU_APP_SECRET = os.getenv("FEISHU_APP_SECRET", "")
+WP_URL = os.getenv("WP_URL", "https://www.tianao1128.online/wp-json/wp/v2")
+WP_USER = os.getenv("WP_USER", "tianao1128")
+WP_PASS = os.getenv("WP_PASS", "")
 
 def get_latest_feishu_message(open_id):
     """获取用户最新消息"""
@@ -91,7 +96,7 @@ def publish_to_wordpress(title, content, excerpt=""):
 
 def main():
     """主流程：检查用户回复并自动发布"""
-    user_open_id = "ou_3cadaa20ce7e2a1e22cce9eabbd89346"
+    user_open_id = os.getenv("FEISHU_AUDIT_USER_OPEN_ID", "ou_3cadaa20ce7e2a1e22cce9eabbd89346")
     
     print("=== RWA 自动发布监听 ===")
     print(f"时间：{datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")

@@ -13,3 +13,10 @@
 - Step 2：飞书文档创建成功 → https://my.feishu.cn/docx/JyI4dMAY1oicMUxcuyrcoa3jnrc
 - Step 3：审核消息已发送到「RWA 早报（07:00WB）」群
 - 等待用户回复「通过」触发 WordPress 发布
+
+## 2026-06-04 07:05
+
+- 轮询结果：TIMEOUT，rwa_morning_20260604.md 在 20 次轮询（10 分钟）内未生成
+- 文件不存在，大小始终为 0
+- 未执行 Step 2 和 Step 3
+- ⚠️ 近期模式：6/2 TIMEOUT、6/3 SUCCESS（延迟8min）、6/4 TIMEOUT — 3天中2天失败，建议排查 07:00 生成任务稳定性

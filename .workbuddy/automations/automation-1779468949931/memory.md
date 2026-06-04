@@ -3,6 +3,20 @@
 
 ## 最近执行记录
 
+### 2026-06-04 07:00
+- **执行状态**: ✅ 成功
+- **新闻日期**: 2026-06-03/04
+- **搜索轮数**: 4轮（综合速览英文×3 + 监管/基础设施 + 国债/Ondo + 代币化股票 + 私人信贷 + 中文补充 + 深度抓取×3）
+- **生成条数**: 4条
+- **保存文件**: `/Users/bruce/WorkBuddy/Claw/rwa_morning_20260604.md`
+- **主要新闻来源**:
+  - CoinAlert News / The Street / Traders Union: Ondo Finance 宣布 Ondo Perps 6月9日上线，ONDO 暴涨17.67%，鲸鱼7490万美元活动 (2026-06-03)
+  - Daily Hodl / Cryptopolitan: Blockmaze 发布合规优先 RWA 代币化基础设施，45+监管资质覆盖8大司法管辖区，Finvasia Group 支持 (2026-06-03)
+  - Crypto Briefing: Plume Network 获百慕大 Class M 数字资产业务牌照，全球首个受监管链上金库管理方 (2026-05-20/21)
+  - Edgen Tech / Blockonomi: Solana RWA交易量占比97%，日交易量16.8亿美元，Backpack Securities 上线代币化股票 (2026-06-02/03)
+- **今日焦点**: Ondo Perps 上线倒计时（RWA衍生品赛道开启）+ Blockmaze 合规基础设施发布 + Plume 双合规框架（BMA+SEC）+ Solana 代币化股票垄断地位
+- **问题**: 多个来源（The Block、BraveNewCoin）受 Cloudflare 保护无法 WebFetch；Plume 百慕大牌照为5月20日旧闻但未在早报中覆盖过
+
 ### 2026-06-03 07:00
 - **执行状态**: ✅ 成功
 - **新闻日期**: 2026-06-02/03

@@ -27,6 +27,18 @@
 - **待处理**：用户需完成 OAuth 授权（device_code: OzWXXSFrLuLlrDygKSHlpICc2OOCXE3WGROOOOOOOOOOqtZxGROOOOOt），授权后次日自动化可正常发送群消息
 - **人工处置**：用户可手动将飞书文档链接发送至群「RWA 早报（07:00WB）」，或回复「通过」触发 WordPress 发布
 
+### 2026-06-04 07:15 - 兜底流程已执行
+
+- **检查结果**：rwa_morning_20260604.md 不存在（07:00 早报未正常生成）
+- **兜底执行**：
+  - Step1: 搜索 RWA 最新动态（全国首部RWA融资标准发布、Clearpool CPOOL Prime + RWA赛道代币矩阵、代币化美债AUM突破50亿美元）
+  - Step2: 已生成早报，保存至 `/Users/bruce/WorkBuddy/Claw/rwa_morning_20260604.md`（3条新闻，10字段结构）
+  - Step3: 已创建飞书文档，doc_id: OKKNdJR1VolLgZxWrl5cOxT3nJh，doc_url: https://www.feishu.cn/docx/OKKNdJR1VolLgZxWrl5cOxT3nJh
+  - Step4: 已成功发送群消息到 oc_b81de3a111b45394b2c1dca20dc33038
+- **待处理**：等待用户回复「通过」触发 WordPress 发布
+
+---
+
 ### 2026-06-03 07:15 - 检查通过，无需兜底
 
 - **检查结果**：rwa_morning_20260603.md 已存在（07:00 早报主任务正常生成）

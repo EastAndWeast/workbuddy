@@ -268,3 +268,32 @@
 8. CoinAlertNews - NYDFS and EBA Forge Transatlantic Stablecoin Supervision Pact (June 2, 2026)
 
 **注意事项**: 两大事件在48小时内先后发生（NYDFS-EBA MoU 6月2日→UK报告6月3日），时间线本身的对比构成了天然叙事框架。UK报告中对央行40%无息存款的批评与5/27 MiCA审查中"稳定币利息禁令"的讨论形成跨大西洋监管对比。CLARITY Act因5/24、5/26、5/30已三次覆盖，今日不重复。
+
+---
+
+## 2026-06-04 (周四)
+
+**状态**: 成功，等待用户「通过」确认发布 WordPress
+
+**执行摘要**:
+- 完成4轮搜索 + 6次深度文章抓取（FinanceFeeds、CoinTelegraph、CoinEdition、Crypto Times、EWN、BizCommunity、African Law Business、Cointelegraph Bessent报道）
+- 选定2大核心主题，以「一放一收」为统一叙事线：
+  ① **CFTC废除30年「不否认」和解政策**（6月4日发布）——跟随SEC步伐，废除1998年政策，允许被告在和解后公开否认CFTC指控。Selig主席直言"近三十年来委员会一直拒绝和解除非被告封口"。与5/29 Gemini撤案形成连续叙事：从个案纠错到制度重构。分析覆盖与SEC类似改革的联动、对加密RWA衍生品执法的三重影响，以及"程序正义改革 vs 政治可控"的深层张力。
+  ② **南非高等法院裁定比特币是「资本」**（6月1日）——豪登省高院裁定比特币属《外汇管制条例》下的资本，跨境转移=资本外逃，600万兰特资产被没收。与2025年同一级别比勒陀利亚分院「加密货币不是资本」的裁决直接冲突。RWA角度：该判决逻辑可延伸至代币化资产，揭示新兴市场「先监管后立法」的路径问题。
+- 文章以「美国减负 vs 南非加锁」为框架，将两个主题统一在「国家如何定义监管边界」的核心问题下。
+- 文件已保存：rwa_evening_20260604.md
+- 飞书文档已创建：https://my.feishu.cn/docx/QihdddonfoaeaYxk3zrcXDI1n2f
+- 审核消息已发送（bot身份）至群「RWA 政策分析（19:00WB）」message_id: om_x100b6d2243b3a0a8b1f25795295f60d
+- **等待用户回复「通过」后发布 WordPress**
+
+**新闻来源**:
+1. FinanceFeeds - CFTC Ends 30-Year "No-Deny" Settlement Policy in Major Enforcement Shift (June 4, 2026)
+2. CoinTelegraph - CFTC follows SEC in scrapping 'no-deny' rule for settlements (June 4, 2026)
+3. CoinEdition - CFTC Drops No-Deny Policy Letting Companies Dispute Allegations Publicly (June 4, 2026)
+4. Crypto Times - CFTC Scraps 1998 No-Deny Policy, Aligns With SEC Settlement Reforms (June 4, 2026)
+5. EWN - Bitcoin treated as money and capital in landmark SA court ruling (June 1, 2026)
+6. African Law Business - Cryptocurrency is money, rules South African court (June 2, 2026)
+7. BizCommunity - Contradictory crypto judgment: High Court declares bitcoin is capital (June 3, 2026)
+8. CoinTelegraph - US Treasury Secretary signals progress on Bitcoin reserve, CLARITY Act (June 3, 2026) — 仅作为参考，CLARITY因多次覆盖未纳入独立分析
+
+**注意事项**: CFTC不否认政策是今天（6/4）刚发布的新闻，时效性极强。南非判决（6/1）因与比勒陀利亚分院2025年裁决的「同级法院冲突」提供独特分析角度，之前未被本系列覆盖。Bessent CLARITY表态因CLARITY已在5/24、5/26、5/30三次深度覆盖，即使Treasury Secretary层面的推动是新角度，仍选择不纳入本期以避免重复。

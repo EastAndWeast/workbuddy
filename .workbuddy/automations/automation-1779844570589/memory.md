@@ -20,3 +20,11 @@
 - 文件不存在，大小始终为 0
 - 未执行 Step 2 和 Step 3
 - ⚠️ 近期模式：6/2 TIMEOUT、6/3 SUCCESS（延迟8min）、6/4 TIMEOUT — 3天中2天失败，建议排查 07:00 生成任务稳定性
+
+## 2026-06-05 08:21（延迟触发）
+
+- 轮询结果：SKIPPED，文件已存在（8998 字节），无需等待
+- Step 2：飞书文档创建成功 → https://my.feishu.cn/docx/MhoGdPBlCooJBSxiV46cfYqsnud
+- Step 3：审核消息已发送到「RWA 早报（07:00WB）」群
+- ⚠️ 自动化触发时间 08:21（而非 07:05），但文件已就绪，发布流程正常完成
+- 等待用户回复「通过」触发 WordPress 发布

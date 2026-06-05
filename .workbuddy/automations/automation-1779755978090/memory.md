@@ -2,6 +2,18 @@
 
 ## 最近执行记录
 
+### 2026-06-05 07:15 - 兜底流程已执行
+
+- **检查结果**：rwa_morning_20260605.md 不存在（07:00 早报未正常生成）
+- **兜底执行**：
+  - Step1: 搜索 RWA 最新动态（链上RWA市场突破320亿美元+流动性碎片化风险、ether.fi x Plume RWA收益金库1亿美元、Ondo Finance x Blockchain.com欧洲零售代币化股票）
+  - Step2: 已生成早报，保存至 `/Users/bruce/WorkBuddy/Claw/rwa_morning_20260605.md`（3条新闻，10字段结构）
+  - Step3: 已创建飞书文档，doc_id: ZGTZdTFSVogDo0xXHrdcMcRineg，doc_url: https://www.feishu.cn/docx/ZGTZdTFSVogDo0xXHrdcMcRineg
+  - Step4: 已成功发送群消息到 oc_b81de3a111b45394b2c1dca20dc33038
+- **待处理**：等待用户回复「通过」触发 WordPress 发布
+
+---
+
 ### 2026-05-29 07:15 - 检查通过，无需兜底
 
 - **检查结果**：rwa_morning_20260529.md 已存在（07:00 早报主任务正常生成）

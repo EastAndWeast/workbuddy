@@ -2,14 +2,15 @@
 
 ## 最近执行
 
-- 2026-06-04 08:31 — ✅ 成功
-  - 文件: rwa_industry_20260604.md (1873 bytes)
-  - 轮询: 第 1 次命中（文件已就绪）
-  - 飞书文档: https://my.feishu.cn/docx/KqBWdGqH2o9KE6xre27cgUafn0d
-  - 消息ID: om_x100b6d3839e580acb17c5bcdb34dafc
+- 2026-06-05 08:28 — ✅ 成功
+  - 文件: rwa_industry_20260605.md (1464 bytes)
+  - 轮询: 第 7 次命中（等待约 3.5 分钟）
+  - 飞书文档: https://my.feishu.cn/docx/B2NKdLKPdoTUN9xQVIBcKU99nMf
+  - 消息ID: om_x100b6d15d659d4a8b18d00f05e6cc14
   - 状态: 已发审核消息，等待「通过」
 
 ## 历史
+- 2026-06-04 — ✅ 成功
 - 2026-06-03 — ✅ 成功
 - 2026-06-02 — ✅ 成功
 - 2026-06-01 — ✅ 成功

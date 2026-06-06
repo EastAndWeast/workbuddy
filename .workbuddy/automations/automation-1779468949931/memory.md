@@ -3,6 +3,20 @@
 
 ## 最近执行记录
 
+### 2026-06-06 07:00
+- **执行状态**: ✅ 成功
+- **新闻日期**: 2026-06-05/06
+- **搜索轮数**: 2轮搜索 + 5次深度抓取
+- **生成条数**: 4条
+- **保存文件**: `/Users/bruce/WorkBuddy/Claw/rwa_morning_20260606.md`
+- **主要新闻来源**:
+  - DTCC 官方 / PRNewswire / CoinAlert / CCN: DTCC 选定 Stellar 公链作为代币化证券多链结算网络，XLM 交易量暴涨 900%（2026-05-27 公告，市场反应持续至 06-05）
+  - Crypto.com / LinkedIn RWA 日报: Chainlink CCIP 承接 41 亿美元跨链资产迁移（Kelp DAO/Lombard/Solv→CCIP），DTCC 集成 Chainlink 抵押品平台（2026-05-07~15 迁移，06-05 日报强调）
+  - LinkedIn RWA 日报 / NeverHodl / CoinMarketCap: Ondo Global Markets 代币化股票市占率超 70%，TVL 35-39 亿美元，Ondo Perps 6月9日上线（2026-06-05）
+  - Live Bitcoin News / LinkedIn RWA 日报 / Binance Square: Evernorth 报告 XRP Ledger RWA 增速超以太坊 2 倍，RWA 总市值突破 320 亿美元（2026-06-05）
+- **今日焦点**: DTCC 多链战略选定 Stellar（FMI级公链接入）+ Chainlink CCIP 41亿美元迁移确立跨链安全标准 + Ondo 代币化股票 70% 市占率 + XRP RWA 增速超 ETH 2 倍
+- **问题**: DTCC 官网受 Cloudflare 保护无法抓取原文；CCN 受 Cloudflare 保护；528btc 中文站无有效内容
+
 ### 2026-06-04 07:00
 - **执行状态**: ✅ 成功
 - **新闻日期**: 2026-06-03/04

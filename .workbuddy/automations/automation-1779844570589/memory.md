@@ -28,3 +28,10 @@
 - Step 3：审核消息已发送到「RWA 早报（07:00WB）」群
 - ⚠️ 自动化触发时间 08:21（而非 07:05），但文件已就绪，发布流程正常完成
 - 等待用户回复「通过」触发 WordPress 发布
+
+## 2026-06-06 07:35
+
+- 轮询结果：SKIPPED，文件已存在（12601 字节），无需等待
+- Step 2：飞书文档创建成功 → https://my.feishu.cn/docx/ACFndHtgboGLHXx09zIcrT7tncc
+- Step 3：审核消息已发送到「RWA 早报（07:00WB）」群（message_id: om_x100b6d019f8e48a0b010c6c464e2429）
+- 等待用户回复「通过」触发 WordPress 发布

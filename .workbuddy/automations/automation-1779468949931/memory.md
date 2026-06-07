@@ -3,6 +3,20 @@
 
 ## 最近执行记录
 
+### 2026-06-07 07:00
+- **执行状态**: ✅ 成功
+- **新闻日期**: 2026-06-05/06/07
+- **搜索轮数**: 4轮搜索 + 4次深度抓取
+- **生成条数**: 4条
+- **保存文件**: `/Users/bruce/WorkBuddy/Claw/rwa_morning_20260607.md`
+- **主要新闻来源**:
+  - AInvest / dwealth.news: Ondo Chain 正式亮相——专为机构结算设计的许可型 L1 区块链，已与摩根大通 Kinexys 完成测试，与贝莱德、富达、万事达合作（2026-06-06）
+  - Aiying License / dwealth.news 周刊: Paxos 获 SEC 清算机构注册（CSD），首家区块链原生清算机构，打破 DTCC 垄断，可实现 T+0 原子结算（2026-05-27/28获批，本周持续发酵）
+  - HokaNews: BNB Chain 链上 RWA 市值飙升至 36 亿美元，90 天涨幅 60%（2026-06-06）
+  - 腾讯新闻/智通财经: 捷利交易宝（08017.HK）100 万美元战略投资新加坡 Eqrrwa Technology，布局 RWA 与 Web3（2026-06-05）
+- **今日焦点**: Ondo Chain 机构 L1 亮相（Ondo 从发行商升级为全栈基础设施）+ Paxos SEC CSD 注册（区块链首进美国结算核心）+ BNB Chain RWA $36亿（多链格局深化）+ 港股公司投资新加坡 RWA 牌照方
+- **问题**: CryptoBriefing SEC 文章受 Cloudflare 保护无法 WebFetch；dwealth.news 周刊未提供 Ondo Chain 原始出处链接
+
 ### 2026-06-06 07:00
 - **执行状态**: ✅ 成功
 - **新闻日期**: 2026-06-05/06

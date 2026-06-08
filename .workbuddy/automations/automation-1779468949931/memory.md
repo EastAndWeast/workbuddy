@@ -3,6 +3,20 @@
 
 ## 最近执行记录
 
+### 2026-06-08 07:00
+- **执行状态**: ✅ 成功
+- **新闻日期**: 2026-06-01~07（周末，无6月8日当天突发新闻）
+- **搜索轮数**: 4轮搜索 + 3次深度抓取
+- **生成条数**: 4条
+- **保存文件**: `/Users/bruce/WorkBuddy/Claw/rwa_morning_20260608.md`
+- **主要新闻来源**:
+  - AInvest / CryptoDiffer / CoinAlert: Ondo Perps 6月9日正式上线，20倍杠杆，代币化股票作抵押，CFTC合规框架（2026-06-03~07持续报道）
+  - Morningstar / PRNewswire: Binance 6月1日上线美股零佣金交易（7000+股票/ETF）+ 预览 bStocks 代币化证券（ADGM合规SPV发行）（2026-06-01）
+  - AInvest / CoinAlert: CFTC 5月29日批准KalshiEX BTCPERP美国首个受监管永续期货 + Coinbase离岸永续期货路径（2026-05-29/06-02）
+  - dwealth.news 周报: 欧洲37银行Qivalis联盟推MiCA欧元稳定币 + SoFi/Banca Sella/Bitget多洲布局 + MANTRA机构透明度报告（2026-06-01周期）
+- **今日焦点**: Ondo Perps明日上线（RWA衍生品赛道开启）+ Binance bStocks预览（交易所巨头入场代币化股票）+ CFTC永续期货监管框架（RWA衍生品合规路径）+ 欧元稳定币联盟（欧洲代币化结算轨道）
+- **问题**: 周末期间缺乏当天突发新闻；Binance bStocks和CFTC批准为5月底-6月初旧闻但此前早报未作为独立条目覆盖
+
 ### 2026-06-07 07:00
 - **执行状态**: ✅ 成功
 - **新闻日期**: 2026-06-05/06/07

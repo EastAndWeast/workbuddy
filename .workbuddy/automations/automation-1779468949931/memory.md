@@ -3,6 +3,20 @@
 
 ## 最近执行记录
 
+### 2026-06-09 07:00
+- **执行状态**: ✅ 成功
+- **新闻日期**: 2026-06-05/08/09
+- **搜索轮数**: 4轮搜索 + 4次深度抓取
+- **生成条数**: 4条
+- **保存文件**: `/Users/bruce/WorkBuddy/Claw/rwa_morning_20260609.md`
+- **主要新闻来源**:
+  - CryptoDiffer / The Street / AInvest: Ondo Perps 6月9日正式全量上线，260+代币化资产永续合约，最高20倍杠杆，OUSG/USDY作保证金（2026-06-09上线日）
+  - DEXTools News / SpaceXChart: SpaceX IPO（SPCX）6月12日纳斯达克上市，Ondo/Backed Finance/Dinari将代币化SPCX同步上链Solana/Base/ETH（2026-06-08/12）
+  - 香港金管局官网 / 21世纪经济报道: 金管局6月5日成立代币化债券专家小组，中银/汇丰/渣打/瑞银/HashKey等参与（2026-06-05）
+  - FinanceFeeds / Crypto Times: 代币化国债~150亿美元成DeFi抵押品层，Circle USYC超越BlackRock BUIDL登顶（2026-05行业数据/分析）
+- **今日焦点**: Ondo Perps上线日（RWA衍生品实战开启）+ SpaceX代币化股票同步IPO（史上最大IPO首现链上发行）+ 香港金管局代币化债券专家小组（亚洲RWA政策基建）+ 代币化国债DeFi抵押品层（分销>品牌）
+- **问题**: Circle Arc 6月9日预告重要消息但未找到具体内容，待后续跟踪
+
 ### 2026-06-08 07:00
 - **执行状态**: ✅ 成功
 - **新闻日期**: 2026-06-01~07（周末，无6月8日当天突发新闻）

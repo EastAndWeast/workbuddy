@@ -1,5 +1,16 @@
 # RWA 行业早报自动化 — 执行记忆
 
+## 2026-06-09 执行摘要
+
+- **状态**：成功
+- **主早报**：`rwa_morning_20260609.md`，3 条新闻
+- **产出**：`rwa_industry_20260609.md`，10 条速报
+- **核心主题**：RWA今日杀进衍生品时代——Ondo Perps上线260+标的+贝莱德4万亿ETF上链路线图启动+Franklin Templeton×MoonPay打通机构链上基金通道
+- **3 条提炼**：贝莱德两款新基金申请、Ondo 5秒跨境赎回、SEC三层监管框架
+- **7 条补充**：Ondo Perps今日上线、Franklin Templeton×MoonPay合作、Ondo TVL 35-39亿、XRPL RWA 4亿/15月、Stellar TVL 2.43亿新高、链上RWA 320亿、碎片化年损6-13亿
+
+---
+
 ## 2026-06-08 执行摘要
 
 - **状态**：成功

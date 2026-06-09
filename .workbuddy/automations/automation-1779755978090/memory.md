@@ -2,6 +2,18 @@
 
 ## 最近执行记录
 
+### 2026-06-09 07:15 - 兜底流程已执行
+
+- **检查结果**：rwa_morning_20260609.md 不存在（07:00 早报未正常生成）
+- **兜底执行**：
+  - Step1: 搜索 RWA 最新动态（BlackRock两款新代币化基金申请、Ondo+摩根大通Kinexys+万事达卡首笔代币化国债即时跨境赎回、SEC 2026代币化证券指引+GENIUS法案+CLARITY法案监管框架）
+  - Step2: 已生成早报，保存至 `/Users/bruce/WorkBuddy/Claw/rwa_morning_20260609.md`（3条新闻，10字段结构）
+  - Step3: 已创建飞书文档，doc_id: W0wgdw4otoiAObx457YcwKADnxg，doc_url: https://www.feishu.cn/docx/W0wgdw4otoiAObx457YcwKADnxg
+  - Step4: 已成功发送群消息到 oc_b81de3a111b45394b2c1dca20dc33038
+- **待处理**：等待用户回复「通过」触发 WordPress 发布
+
+---
+
 ### 2026-06-08 07:15 - 检查通过，无需兜底
 
 - **检查结果**：rwa_morning_20260608.md 已存在（07:00 早报主任务正常生成）

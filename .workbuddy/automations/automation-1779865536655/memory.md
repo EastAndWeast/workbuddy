@@ -2,6 +2,14 @@
 
 ## 最近执行
 
+- 2026-06-09 08:36 — ✅ 成功
+  - 文件: rwa_industry_20260609.md (1979 bytes)
+  - 标题: 贝莱德4万亿上链 + Ondo Perps 上线——RWA 今日杀进衍生品时代
+  - 轮询: 第 12 次命中（等待约 5.5 分钟）
+  - 飞书文档: https://my.feishu.cn/docx/XKdDdXbV4oJ3gGxFLO0cIkkanJf
+  - 消息ID: om_x100b6d424ce760a4b3db7d0e52b8653
+  - 状态: 已发审核消息，等待「通过」
+
 - 2026-06-08 08:25 — ✅ 成功
   - 文件: rwa_industry_20260608.md (1863 bytes)
   - 标题: 代币化股票可以 20 倍杠杆了——RWA 衍生品赛道正式开战

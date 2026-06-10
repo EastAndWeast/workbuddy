@@ -56,3 +56,10 @@
 - Step 2：飞书文档创建成功 → https://my.feishu.cn/docx/UvTEdNjxko6T7ixbS18cCRAJn6d
 - Step 3：审核消息已发送到「RWA 早报（07:00WB）」群（message_id: om_x100b6d4156541ca8b1c801360065900）
 - 等待用户回复「通过」触发 WordPress 发布
+
+## 2026-06-10 07:35
+
+- 轮询结果：SKIPPED，文件已存在，无需等待
+- Step 2：飞书文档创建成功 → https://my.feishu.cn/docx/KDpIdwW3Jo8d62xZUdfcZnNPn1f
+- Step 3：审核消息已发送到「RWA 早报（07:00WB）」群（message_id: om_x100b6dbe7fd0bca0b34c970be6259d5）
+- 等待用户回复「通过」触发 WordPress 发布

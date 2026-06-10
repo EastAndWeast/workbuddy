@@ -13,11 +13,22 @@ WP_USER = os.getenv("WP_USER", "tianao1128")
 WP_PASS = os.getenv("WP_PASS", "")
 
 def md_to_html(md_text: str) -> str:
+    """Convert Markdown to HTML using markdown library (with extensions)."""
+    try:
+        import markdown as md_lib
+        return md_lib.markdown(md_text, extensions=['extra', 'codehilite', 'nl2br'])
+    except ImportError:
+        import warnings
+        warnings.warn("markdown library not installed. Run: pip install markdown")
+        return _md_to_html_fallback(md_text)
+
+
+def _md_to_html_fallback(md_text: str) -> str:
+    """Minimal fallback converter – handles **bold**, links, headers, lists."""
     lines = md_text.strip().split('\n')
     html_lines = []
     in_ul = False
     in_ol = False
-    in_blockquote = False
     num_pattern = re.compile(r'^(\d+)\.\s')
 
     i = 0
@@ -25,49 +36,9 @@ def md_to_html(md_text: str) -> str:
         line = lines[i]
 
         if line.strip() == '---':
-            for tag in ['</ul>', '</ol>', '</blockquote>']:
-                if (in_ul and tag == '</ul>') or (in_ol and tag == '</ol>') or (in_blockquote and tag == '</blockquote>'):
-                    html_lines.append(tag)
-                    in_ul = in_ol = in_blockquote = False
-                    break
             if in_ul: html_lines.append('</ul>'); in_ul = False
             if in_ol: html_lines.append('</ol>'); in_ol = False
-            if in_blockquote: html_lines.append('</blockquote>'); in_blockquote = False
             html_lines.append('<hr>')
-            i += 1; continue
-
-        if line.startswith('## '):
-            if in_ul: html_lines.append('</ul>'); in_ul = False
-            if in_ol: html_lines.append('</ol>'); in_ol = False
-            content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', line[3:].strip())
-            content = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', content)
-            html_lines.append(f'<h2>{content}</h2>')
-            i += 1; continue
-
-        if line.startswith('### '):
-            if in_ul: html_lines.append('</ul>'); in_ul = False
-            if in_ol: html_lines.append('</ol>'); in_ol = False
-            content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', line[4:].strip())
-            content = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', content)
-            html_lines.append(f'<h3>{content}</h3>')
-            i += 1; continue
-
-        if num_pattern.match(line):
-            if in_ul: html_lines.append('</ul>'); in_ul = False
-            if not in_ol: html_lines.append('<ol>'); in_ol = True
-            content = num_pattern.sub('', line, count=1)
-            content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', content)
-            content = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', content)
-            html_lines.append(f'<li>{content.strip()}</li>')
-            i += 1; continue
-
-        if line.strip().startswith('- '):
-            if in_ol: html_lines.append('</ol>'); in_ol = False
-            if not in_ul: html_lines.append('<ul>'); in_ul = True
-            content = line.strip()[2:].strip()
-            content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', content)
-            content = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', content)
-            html_lines.append(f'<li>{content}</li>')
             i += 1; continue
 
         if not line.strip():
@@ -75,18 +46,52 @@ def md_to_html(md_text: str) -> str:
             if in_ol: html_lines.append('</ol>'); in_ol = False
             i += 1; continue
 
+        if line.startswith('### '):
+            if in_ul: html_lines.append('</ul>'); in_ul = False
+            if in_ol: html_lines.append('</ol>'); in_ol = False
+            html_lines.append(f'<h3>{_ai_inline(line[4:])}</h3>')
+            i += 1; continue
+        if line.startswith('## '):
+            if in_ul: html_lines.append('</ul>'); in_ul = False
+            if in_ol: html_lines.append('</ol>'); in_ol = False
+            html_lines.append(f'<h2>{_ai_inline(line[3:])}</h2>')
+            i += 1; continue
+        if line.startswith('# '):
+            if in_ul: html_lines.append('</ul>'); in_ul = False
+            if in_ol: html_lines.append('</ol>'); in_ol = False
+            html_lines.append(f'<h1>{_ai_inline(line[2:])}</h1>')
+            i += 1; continue
+
+        if num_pattern.match(line):
+            if in_ul: html_lines.append('</ul>'); in_ul = False
+            if not in_ol: html_lines.append('<ol>'); in_ol = True
+            content = num_pattern.sub('', line, count=1)
+            html_lines.append(f'<li>{_ai_inline(content.strip())}</li>')
+            i += 1; continue
+
+        if line.strip().startswith('- '):
+            if in_ol: html_lines.append('</ol>'); in_ol = False
+            if not in_ul: html_lines.append('<ul>'); in_ul = True
+            content = line.strip()[2:]
+            html_lines.append(f'<li>{_ai_inline(content.strip())}</li>')
+            i += 1; continue
+
         if in_ul: html_lines.append('</ul>'); in_ul = False
         if in_ol: html_lines.append('</ol>'); in_ol = False
-        content = line.strip()
-        content = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', content)
-        content = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', content)
-        html_lines.append(f'<p>{content}</p>')
+        html_lines.append(f'<p>{_ai_inline(line.strip())}</p>')
         i += 1
 
     if in_ul: html_lines.append('</ul>')
     if in_ol: html_lines.append('</ol>')
-    if in_blockquote: html_lines.append('</blockquote>')
     return '\n'.join(html_lines)
+
+
+def _ai_inline(text: str) -> str:
+    """Handle inline Markdown: **bold**, [link](url), `code`."""
+    text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', text)
+    text = re.sub(r'`(.+?)`', r'<code>\1</code>', text)
+    return text
 
 
 def upload_media(filepath: str) -> int:

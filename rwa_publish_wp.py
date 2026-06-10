@@ -46,11 +46,25 @@ def find_morning_report():
 
 
 def md_to_html(md_text: str) -> str:
-    """Convert RWA morning report Markdown to HTML."""
+    """Convert Markdown to HTML using markdown library (with extensions)."""
+    try:
+        import markdown as md_lib
+        # extra: footnotes, tables, fenced_code, etc.
+        # codehilite: syntax highlighting for code blocks
+        # nl2br: convert newlines to <br> (like GFM)
+        return md_lib.markdown(md_text, extensions=['extra', 'codehilite', 'nl2br'])
+    except ImportError:
+        # Fallback: basic conversion without ** marker leakage
+        import warnings
+        warnings.warn("markdown library not installed, using basic converter. Run: pip install markdown")
+        return _md_to_html_fallback(md_text)
+
+
+def _md_to_html_fallback(md_text: str) -> str:
+    """Minimal fallback converter – handles **bold**, links, headers, lists."""
     lines = md_text.strip().split('\n')
     html_lines = []
     in_ul = False
-    in_blockquote = False
     in_ol = False
     num_pattern = re.compile(r'^(\d+)\.\s')
 
@@ -60,153 +74,68 @@ def md_to_html(md_text: str) -> str:
 
         # Horizontal rule
         if line.strip() == '---':
-            if in_ul:
-                html_lines.append('</ul>')
-                in_ul = False
-            if in_ol:
-                html_lines.append('</ol>')
-                in_ol = False
-            if in_blockquote:
-                html_lines.append('</blockquote>')
-                in_blockquote = False
+            if in_ul: html_lines.append('</ul>'); in_ul = False
+            if in_ol: html_lines.append('</ol>'); in_ol = False
             html_lines.append('<hr>')
-            i += 1
-            continue
-
-        # Blockquote
-        if line.startswith('> '):
-            if not in_blockquote:
-                html_lines.append('<blockquote>')
-                in_blockquote = True
-            content = line[2:].strip()
-            content = md_inline_format(content)
-            html_lines.append(f'<p>{content}</p>')
-            i += 1
-            continue
-        elif line.startswith('>') and not line.startswith('> '):
-            if not in_blockquote:
-                html_lines.append('<blockquote>')
-                in_blockquote = True
-            content = line[1:].strip()
-            content = md_inline_format(content)
-            html_lines.append(f'<p>{content}</p>')
-            i += 1
-            continue
-        elif in_blockquote and not line.startswith('>'):
-            html_lines.append('</blockquote>')
-            in_blockquote = False
+            i += 1; continue
 
         # Empty line
         if not line.strip():
-            if in_ul:
-                html_lines.append('</ul>')
-                in_ul = False
-            if in_ol:
-                html_lines.append('</ol>')
-                in_ol = False
-            i += 1
-            continue
+            if in_ul: html_lines.append('</ul>'); in_ul = False
+            if in_ol: html_lines.append('</ol>'); in_ol = False
+            i += 1; continue
 
-        # Heading ##
-        if line.startswith('## '):
-            if in_ul:
-                html_lines.append('</ul>')
-                in_ul = False
-            if in_ol:
-                html_lines.append('</ol>')
-                in_ol = False
-            content = line[3:].strip()
-            content = md_inline_format(content)
-            html_lines.append(f'<h2>{content}</h2>')
-            i += 1
-            continue
-
-        # Heading ###
+        # Headings
         if line.startswith('### '):
-            if in_ul:
-                html_lines.append('</ul>')
-                in_ul = False
-            if in_ol:
-                html_lines.append('</ol>')
-                in_ol = False
-            content = line[4:].strip()
-            content = md_inline_format(content)
+            if in_ul: html_lines.append('</ul>'); in_ul = False
+            if in_ol: html_lines.append('</ol>'); in_ol = False
+            content = _md_inline(line[4:])
             html_lines.append(f'<h3>{content}</h3>')
-            i += 1
-            continue
+            i += 1; continue
+        if line.startswith('## '):
+            if in_ul: html_lines.append('</ul>'); in_ul = False
+            if in_ol: html_lines.append('</ol>'); in_ol = False
+            content = _md_inline(line[3:])
+            html_lines.append(f'<h2>{content}</h2>')
+            i += 1; continue
+        if line.startswith('# '):
+            if in_ul: html_lines.append('</ul>'); in_ul = False
+            if in_ol: html_lines.append('</ol>'); in_ol = False
+            content = _md_inline(line[2:])
+            html_lines.append(f'<h1>{content}</h1>')
+            i += 1; continue
 
-        # Numbered list item (1. text)
+        # Numbered list
         if num_pattern.match(line):
-            if in_ul:
-                html_lines.append('</ul>')
-                in_ul = False
-            if not in_ol:
-                html_lines.append('<ol>')
-                in_ol = True
+            if in_ul: html_lines.append('</ul>'); in_ul = False
+            if not in_ol: html_lines.append('<ol>'); in_ol = True
             content = num_pattern.sub('', line, count=1)
-            content = md_inline_format(content)
-            html_lines.append(f'<li>{content}</li>')
-            i += 1
-            continue
+            html_lines.append(f'<li>{_md_inline(content.strip())}</li>')
+            i += 1; continue
 
-        # Bullet list item (- text)
-        if line.strip().startswith('- ') or line.strip().startswith('   - '):
-            if in_ol:
-                html_lines.append('</ol>')
-                in_ol = False
-            if not in_ul:
-                html_lines.append('<ul>')
-                in_ul = True
-            content = line.strip()[2:].strip()
-            content = md_inline_format(content)
-            html_lines.append(f'<li>{content}</li>')
-            i += 1
-            continue
-
-        # Any other numbered item
-        o = num_pattern.match(line.strip())
-        if o:
-            if in_ul:
-                html_lines.append('</ul>')
-                in_ul = False
-            if not in_ol:
-                html_lines.append('<ol>')
-                in_ol = True
-            content = num_pattern.sub('', line.strip(), count=1)
-            content = md_inline_format(content)
-            html_lines.append(f'<li>{content}</li>')
-            i += 1
-            continue
+        # Bullet list
+        if line.strip().startswith('- '):
+            if in_ol: html_lines.append('</ol>'); in_ol = False
+            if not in_ul: html_lines.append('<ul>'); in_ul = True
+            content = line.strip()[2:]
+            html_lines.append(f'<li>{_md_inline(content.strip())}</li>')
+            i += 1; continue
 
         # Regular paragraph
-        if in_ul:
-            html_lines.append('</ul>')
-            in_ul = False
-        if in_ol:
-            html_lines.append('</ol>')
-            in_ol = False
-        content = md_inline_format(line.strip())
-        html_lines.append(f'<p>{content}</p>')
+        if in_ul: html_lines.append('</ul>'); in_ul = False
+        if in_ol: html_lines.append('</ol>'); in_ol = False
+        html_lines.append(f'<p>{_md_inline(line.strip())}</p>')
         i += 1
 
-    # Close open tags
-    if in_ul:
-        html_lines.append('</ul>')
-    if in_ol:
-        html_lines.append('</ol>')
-    if in_blockquote:
-        html_lines.append('</blockquote>')
-
+    if in_ul: html_lines.append('</ul>')
+    if in_ol: html_lines.append('</ol>')
     return '\n'.join(html_lines)
 
 
-def md_inline_format(text: str) -> str:
-    """Handle inline Markdown formatting."""
-    # Bold: **text**
+def _md_inline(text: str) -> str:
+    """Handle inline Markdown: **bold**, [link](url), `code`."""
     text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
-    # Links: [text](url)
     text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', text)
-    # Inline code: `text`
     text = re.sub(r'`(.+?)`', r'<code>\1</code>', text)
     return text
 

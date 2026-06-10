@@ -1,77 +1,123 @@
-import re
+#!/usr/bin/env python3
+"""Convert Markdown to HTML using the markdown library.
+
+Usage:
+    python3 convert_md_to_html.py <input.md> [output.html]
+
+If output path is omitted, writes alongside input as .html.
+"""
+
 import sys
+import os
+import re
 
-if len(sys.argv) < 2:
-    print("Usage: python convert_md_to_html.py <input.md>")
-    sys.exit(1)
 
-input_file = sys.argv[1]
-output_file = input_file.rsplit('.', 1)[0] + '.html'
+def md_to_html(md_text: str) -> str:
+    """Convert Markdown to HTML using markdown library (with extensions)."""
+    try:
+        import markdown as md_lib
+        return md_lib.markdown(md_text, extensions=['extra', 'codehilite', 'nl2br'])
+    except ImportError:
+        print("⚠️  markdown library not found, using basic fallback.")
+        print("   Install it:  pip install markdown")
+        return _md_to_html_fallback(md_text)
 
-with open(input_file, "r", encoding="utf-8") as f:
-    md = f.read()
 
-html = md
+def _md_to_html_fallback(md_text: str) -> str:
+    """Minimal fallback converter – handles **bold**, links, headers, lists."""
+    lines = md_text.strip().split('\n')
+    html_lines = []
+    in_ul = False
+    in_ol = False
+    num_pattern = re.compile(r'^(\d+)\.\s')
 
-# Title: # -> h1
-html = re.sub(r'^# (.+)$', r'<h1>\1</h1>', html, flags=re.MULTILINE)
+    def _inline(text: str) -> str:
+        text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
+        text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', text)
+        text = re.sub(r'`(.+?)`', r'<code>\1</code>', text)
+        return text
 
-# Subtitle: ## -> h2  
-html = re.sub(r'^## (.+)$', r'<h2>\1</h2>', html, flags=re.MULTILINE)
+    i = 0
+    while i < len(lines):
+        line = lines[i]
 
-# Bold: **text** -> <strong>text</strong>
-html = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', html)
+        if line.strip() == '---':
+            if in_ul: html_lines.append('</ul>'); in_ul = False
+            if in_ol: html_lines.append('</ol>'); in_ol = False
+            html_lines.append('<hr>')
+            i += 1; continue
 
-# Inline code
-html = re.sub(r'`(.+?)`', r'<code>\1</code>', html)
+        if not line.strip():
+            if in_ul: html_lines.append('</ul>'); in_ul = False
+            if in_ol: html_lines.append('</ol>'); in_ol = False
+            i += 1; continue
 
-# Links
-html = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2">\1</a>', html)
+        if line.startswith('### '):
+            if in_ul: html_lines.append('</ul>'); in_ul = False
+            if in_ol: html_lines.append('</ol>'); in_ol = False
+            html_lines.append(f'<h3>{_inline(line[4:])}</h3>')
+            i += 1; continue
+        if line.startswith('## '):
+            if in_ul: html_lines.append('</ul>'); in_ul = False
+            if in_ol: html_lines.append('</ol>'); in_ol = False
+            html_lines.append(f'<h2>{_inline(line[3:])}</h2>')
+            i += 1; continue
+        if line.startswith('# '):
+            if in_ul: html_lines.append('</ul>'); in_ul = False
+            if in_ol: html_lines.append('</ol>'); in_ol = False
+            html_lines.append(f'<h1>{_inline(line[2:])}</h1>')
+            i += 1; continue
 
-# Blockquotes
-lines = html.split('\n')
-new_lines = []
-in_blockquote = False
-for line in lines:
-    if line.startswith('> '):
-        if not in_blockquote:
-            new_lines.append('<blockquote>')
-            in_blockquote = True
-        new_lines.append(line[2:] + '<br>')
-    else:
-        if in_blockquote:
-            new_lines.append('</blockquote>')
-            in_blockquote = False
-        new_lines.append(line)
+        if num_pattern.match(line):
+            if in_ul: html_lines.append('</ul>'); in_ul = False
+            if not in_ol: html_lines.append('<ol>'); in_ol = True
+            content = num_pattern.sub('', line, count=1)
+            html_lines.append(f'<li>{_inline(content.strip())}</li>')
+            i += 1; continue
 
-if in_blockquote:
-    new_lines.append('</blockquote>')
+        if line.strip().startswith('- '):
+            if in_ol: html_lines.append('</ol>'); in_ol = False
+            if not in_ul: html_lines.append('<ul>'); in_ul = True
+            content = line.strip()[2:]
+            html_lines.append(f'<li>{_inline(content.strip())}</li>')
+            i += 1; continue
 
-html = '\n'.join(new_lines)
+        if in_ul: html_lines.append('</ul>'); in_ul = False
+        if in_ol: html_lines.append('</ol>'); in_ol = False
+        html_lines.append(f'<p>{_inline(line.strip())}</p>')
+        i += 1
 
-# HR
-html = re.sub(r'^---$', '<hr>', html, flags=re.MULTILINE)
+    if in_ul: html_lines.append('</ul>')
+    if in_ol: html_lines.append('</ol>')
+    return '\n'.join(html_lines)
 
-# Bullet lists
-html = re.sub(r'^- (.+)$', r'<li>\1</li>', html, flags=re.MULTILINE)
 
-def wrap_ul(match):
-    return '<ul>' + match.group(0) + '</ul>'
-html = re.sub(r'(?:<li>.*?</li>\n?)+', wrap_ul, html, flags=re.DOTALL)
+def main():
+    if len(sys.argv) < 2:
+        print("Usage: python3 convert_md_to_html.py <input.md> [output.html]")
+        sys.exit(1)
 
-# Paragraphs
-final_lines = []
-for line in html.split('\n'):
-    stripped = line.strip()
-    if stripped and not stripped.startswith('<') and not stripped.endswith('>'):
-        final_lines.append('<p>' + stripped + '</p>')
-    else:
-        final_lines.append(line)
+    input_path = sys.argv[1]
+    if not os.path.exists(input_path):
+        print(f"ERROR: File not found: {input_path}")
+        sys.exit(1)
 
-html_final = '\n'.join(final_lines)
+    output_path = sys.argv[2] if len(sys.argv) > 2 else input_path.rsplit('.', 1)[0] + '.html'
 
-with open(output_file, "w", encoding="utf-8") as f:
-    f.write(html_final)
+    with open(input_path, 'r', encoding='utf-8') as f:
+        md_text = f.read()
 
-print(f"HTML conversion done -> {output_file}")
-print("Length:", len(html_final))
+    html = md_to_html(md_text)
+
+    with open(output_path, 'w', encoding='utf-8') as f:
+        f.write(html)
+
+    print(f"✅ HTML conversion done -> {output_path}")
+    print(f"   Input:  {len(md_text)} chars")
+    print(f"   Output: {len(html)} chars")
+    if '**' in html:
+        print("⚠️  Warning: ** markers still present in output!")
+
+
+if __name__ == '__main__':
+    main()

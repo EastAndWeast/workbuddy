@@ -3,6 +3,20 @@
 
 ## 最近执行记录
 
+### 2026-06-11 07:00
+- **执行状态**: ✅ 成功
+- **新闻日期**: 2026-06-08/09/10/11
+- **搜索轮数**: 4轮搜索 + 4次深度抓取
+- **生成条数**: 4条
+- **保存文件**: `/Users/bruce/WorkBuddy/Claw/rwa_morning_20260611.md`
+- **主要新闻来源**:
+  - Live Bitcoin News / CoinGabbar / CryptoDiffer: Ondo Perps 6月9日正式上线公测，260+代币化资产永续合约，20倍杠杆，OUSG/USDY作抵押，7×24交易（2026-06-09/10）
+  - DEXTools News / 新浪财经: SpaceX（SPCX）6月12日纳斯达克IPO，Ondo/Backed/Dinari三家平台同步推出代币化SPCX股票上链Solana/Base/ETH，史上最大IPO首次链上同步发行（2026-06-08/12）
+  - CoinTelegraph / Binance Research: 代币化RWA活跃市值逆势增长589%，代币化股票+422%，黄金+39%，RWA从国债叙事走向多元化收益生态（2026-06-08）
+  - Aurelion / CoinGecko: 代币化黄金Q1 2026交易量907亿美元，单季超2025全年（846亿美元），PAXG/XAUT双寡头格局（2026-04报告，5-6月持续发酵）
+- **今日焦点**: Ondo Perps正式上线（RWA衍生品时代来临）+ SpaceX史上最大IPO链上同步（代币化股票里程碑）+ Binance 589%增长数据（RWA熊市逆势最强叙事）+ 代币化黄金Q1交易量破纪录
+- **问题**: 528btc中文站无有效内容；Ondo Perps上线后实际交易量数据尚未披露
+
 ### 2026-06-10 07:00
 - **执行状态**: ✅ 成功
 - **新闻日期**: 2026-06-09/10

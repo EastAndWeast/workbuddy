@@ -5,6 +5,26 @@
 
 ---
 
+## 2026-06-11 (周四)
+
+**状态**: ✅ 成功（自动化执行，模型 auto）
+**覆盖话题**:
+1. US CLARITY Act Senate Setback (June 10-11) — Ethics dispute over state attorneys general enforcement clause tied to Trump crypto business, law enforcement opposition to Section 604 (Blockchain Regulatory Certainty Act) over developer liability protections, bipartisan negotiations collapsed June 10, resuming June 12, only 31 Senate session days before August recess, Lummis warns US risks "watching from sidelines", 200+ industry groups backing, 60-vote filibuster threshold not yet secured
+2. Japan Lower House Passes Crypto-as-Financial-Instruments Bill (June 10-11) — Unanimous approval by House Finance Committee, reclassifies crypto under FIEA from Payment Services Act, tax cut 55%→20% (effective 2028), ETF pathway opened (2027), insider trading ban introduced, penalties from 3→10 years imprisonment, ~50% exchanges expected to close, Nomura/SBI/JPX developing ETF products
+
+**新闻来源**:
+1. Blockonomi - CLARITY Act Faces Senate Setback as Ethics Dispute and Law Enforcement Concerns Grow (June 11)
+2. The Cryptonomist - CLARITY Act Digital Asset Regulation Faces Final Senate Hurdles (June 11)
+3. Cryptopolitan - Japan's 55% Crypto Tax Era Is Ending (June 11)
+4. OurCryptoTalk - Japan Crypto Bill Advances With 20% Tax and ETF Path (June 11)
+5. CryptoNewsBytes - Japan Passes Bill Reclassifying Crypto as Financial Instruments (April 10)
+6. Cointelegraph - Japan Regulates Crypto Assets as Financial Instruments (April 10)
+7. CoinEdition - Japan Advances 20% Crypto Tax Bill (June 11)
+8. Crypto Times - Sen. Lummis: US Will Watch From the Sidelines Without CLARITY Act (June 1)
+9. Blockonomi - CLARITY Act Faces Senate Test Over Enforcement Clause (June 9)
+
+---
+
 ## 2026-06-10 (周三)
 
 **状态**: ✅ 成功（自动化执行，模型 auto）
@@ -40,20 +60,6 @@
 
 ---
 
-## 2026-06-06 (周六)
-
-**覆盖话题**:
-1. Mastercard 24/7 链上稳定币结算（6月3日）— 6种受监管稳定币×8条链
-2. UAE 五重监管体系（H1 2026）— CMA/VARA/DFSA/FSRA/CBUAE 并行
-
-**新闻来源**:
-1. Mastercard Official Press Release - Settlement Capabilities (June 3)
-2. CoinFomania - Mastercard 24/7 Stablecoin Settlement (June 3)
-3. NeosLegal - UAE Crypto Regulation H1 2026 (May 25)
-4. Cryptonomist - Mastercard Ripple RLUSD Settlement (June 4)
-
----
-
 ## 2026-06-09 (周二)
 
 **状态**: ✅ 成功（手动执行，模型 auto）
@@ -71,18 +77,3 @@
 7. CoinAlert News - Ondo Perps: CFTC Approval (June 2)
 
 ---
-
-## 2026-06-08 (周一)
-
-**状态**: ✅ 成功（手动执行，模型 deepseek-v4-pro）
-
-**覆盖话题**:
-1. CFTC 批准美国首个受监管永续期货合约（5月29日）— KalshiEX BTCPERP，为 RWA 衍生品建立监管先例
-2. Ondo Perps 6月9日上线 — 首个 CFTC 框架下的 RWA 永续合约平台，260+ 代币化美股/ETF，最高 20 倍杠杆，代币化资产作为抵押品
-
-**新闻来源**:
-1. AInvest - Ondo Finance Expands Ecosystem with Ondo Perps Launch (June 7)
-2. CoinCentral - Ondo Finance Advances Perps Launch After CFTC Clears First Contract (June 2)
-3. CoinAlert News - Ondo Perps: CFTC Approval (June 2)
-4. CryptoDiffer - Ondo Perps Full Launch (June 3)
-5. MoneyCheck - Ondo Finance Prepares Perpetuals Platform Launch (June 2)

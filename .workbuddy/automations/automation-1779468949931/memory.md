@@ -3,6 +3,33 @@
 
 ## 最近执行记录
 
+### 2026-06-13 07:55（手动补跑，模型已切换）
+- **执行状态**: ✅ 成功（手动触发）
+- **触发原因**: 06:55/07:10/07:30 三次自动化因 Quota 429 失败，用户充值/换模型后手动补跑
+- **新闻日期**: 2026-06-11/12
+- **搜索轮数**: 7轮（综合速览×2、监管政策、机构动态、平台产品、稳定币、中文资讯、深度抓取×3）
+- **生成条数**: 3条
+- **保存文件**: `/Users/bruce/WorkBuddy/Claw/rwa_morning_20260613.md`
+- **主要新闻来源**:
+  - 新京报贝壳财经 / 格隆汇: 深圳证监局+深圳市地方金融管理局 6月12日发布《关于警惕以投资RWA名义从事非法活动的风险提示》，首份地方监管针对RWA骗局正式警告（2026-06-12）
+  - Citigroup 官方新闻稿 / Blockonomi / CryptocurrencyHelp / CoinAlertNews: 花旗6月11日推出全球首个代币化存托凭证（Digital Depositary Receipts），SDX 提供区块链基础设施，Kaleido+花旗投资组合公司完成首笔机构交易，初期仅向境外机构+高净值客户开放（2026-06-11/12）
+  - CoinAlertNews / Las Vegas Sun / MarketChameleon / EL7.AI / GlobeNewswire: Avalanche Treasury Co.（AVAT）6月11日通过Mountain Lake SPAC合并挂牌纳斯达克，1500万AVAX主动管理国库，Bart Smith任CEO，Scaramucci任董事长（2026-06-11）
+- **今日焦点**: 深圳RWA风险提示（地方监管正式警告）+ 花旗DDRs（机构代币化里程碑）+ AVAT上市（主动管理国库新范式）
+- **问题**: 周六属"周末趋势"主题，搜索量低于工作日；需手动触发后续发布流程
+
+### 2026-06-12 07:00
+- **执行状态**: ✅ 成功
+- **新闻日期**: 2026-06-10/11/12
+- **搜索轮数**: 3轮搜索 + 4次深度抓取
+- **生成条数**: 3条
+- **保存文件**: `/Users/bruce/WorkBuddy/Claw/rwa_morning_20260612.md`
+- **主要新闻来源**:
+  - Genfinity / Blockonomi / Crowdfund Insider: SpaceX 今日纳斯达克上市（SPCX），IPO定价$135，估值$1.75T，Backpack+Sunrise+Meteora在Solana同步上线代币化SPCX，Bybit推出IPO Express平台，首次超万亿级IPO同日链上交易。Senator Warren致函SEC要求叫停（2026-06-11/12）
+  - Genfinity: Archax在Hedera上线按秒级收益流式分发功能，覆盖BlackRock/Fidelity/State Street等代币化基金，以Circle USDC结算，全球首个受监管证券实时付息产品（2026-06-11）
+  - Market Chameleon: SurancePlus(Oxbridge Re)推出全球首批代币化再保险RWA证券（HCI Re 2026 Series A/B/C），Solana+Alphaledger发行，Reg D/Reg S合规，最低$5000门槛，预期年化243%/133%/19%，再保险风险首次上链（2026-06-10）
+- **今日焦点**: SpaceX史上最大IPO首日链上同步交易（代币化股票里程碑）+ Archax按秒付息落地（受监管证券实时收益分发首创）+ SurancePlus代币化再保险（RWA资产类别扩展至保险风险）
+- **问题**: SpaceX代币化此前3天早报均有预告，今日为实际落地日，以具体上线细节和首日交易启动为更新依据
+
 ### 2026-06-11 07:00
 - **执行状态**: ✅ 成功
 - **新闻日期**: 2026-06-08/09/10/11

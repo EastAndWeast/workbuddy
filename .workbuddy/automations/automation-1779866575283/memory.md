@@ -1,5 +1,21 @@
 # RWA 时评飞书发布 - 执行历史
 
+## 2026-06-13 19:25
+- **结果**: ✅ 成功
+- **文件**: `rwa_evening_20260613.md`（size=13393）
+- **标题**: 链上美股的"最后一公里"终于打通了——SEC 动刀 Reg NMS，代币化股票的合规枷锁正在脱落
+- **飞书文档**: https://my.feishu.cn/docx/N0Upd2Uh7otSO0xHE11cd0ppnwd
+- **群消息**: 已发送至 `oc_29c8d746be4f75efd4eca6f5286819ed`，message_id: `om_x100b6de7afcac8a0c3635697d00578b`
+- **状态**: 等待用户回复「通过」以触发 WordPress 发布
+
+## 2026-06-12 19:20
+- **结果**: ✅ 成功
+- **文件**: `rwa_evening_20260612.md`（size=12481）
+- **标题**: 合规的倒计时零点——日本明天、欧盟19天后，链上金融再无灰色地带
+- **飞书文档**: https://my.feishu.cn/docx/WPbsdB73aoVAixxOignc21nMn9b
+- **群消息**: 已发送至 `oc_29c8d746be4f75efd4eca6f5286819ed`，message_id: `om_x100b6d8af11b28a4c49999c924e61c4`
+- **状态**: 等待用户回复「通过」以触发 WordPress 发布
+
 ## 2026-06-11 19:25
 - **结果**: ✅ 成功
 - **文件**: `rwa_evening_20260611.md`（size=20377）

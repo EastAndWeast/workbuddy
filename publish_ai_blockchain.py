@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Publish AI Blockchain article to WordPress with cover image."""
+"""Publish AI Blockchain article to WordPress with cover image and inline charts."""
 import sys, os, re, base64, json
 import xmlrpc.client
 
@@ -94,8 +94,8 @@ def _ai_inline(text: str) -> str:
     return text
 
 
-def upload_media(filepath: str) -> int:
-    """Upload image to WordPress media library via XML-RPC. Returns media_id."""
+def upload_media(filepath: str) -> dict:
+    """Upload image to WordPress media library via XML-RPC. Returns dict with id, url."""
     with open(filepath, 'rb') as f:
         file_data = f.read()
 
@@ -116,7 +116,88 @@ def upload_media(filepath: str) -> int:
     )
     print(f"[Media] Uploaded: {result.get('url')}")
     print(f"[Media] Media ID: {result.get('id')}")
-    return int(result.get('id'))
+    return {
+        'id': int(result.get('id')),
+        'url': result.get('url', ''),
+        'link': result.get('url', '')
+    }
+
+
+def generate_charts(spec_path: str, output_dir: str) -> list:
+    """Call chart_renderer.py to generate charts from JSON spec. Returns list of PNG paths."""
+    renderer_script = os.path.join(os.path.dirname(__file__), 'chart_renderer.py')
+    if not os.path.exists(renderer_script):
+        print(f"⚠️  Chart renderer not found: {renderer_script}")
+        return []
+
+    import subprocess
+    result = subprocess.run(
+        [sys.executable, renderer_script, spec_path, output_dir],
+        capture_output=True, text=True
+    )
+    print(result.stdout)
+    if result.returncode != 0:
+        print(f"⚠️  Chart generation error: {result.stderr}")
+        return []
+
+    # Parse output to find generated file paths
+    paths = []
+    for line in result.stdout.split('\n'):
+        if line.startswith('  → '):
+            paths.append(line[4:].strip())
+    return paths
+
+
+def embed_charts_in_markdown(md_text: str, chart_urls: list, spec_path: str) -> str:
+    """Embed chart images into markdown text based on position hints from spec."""
+    if not chart_urls or not os.path.exists(spec_path):
+        return md_text
+
+    with open(spec_path, 'r', encoding='utf-8') as f:
+        spec = json.load(f)
+
+    charts = spec.get('charts', [])
+    lines = md_text.split('\n')
+    result_lines = []
+    embedded = set()
+
+    for line in lines:
+        result_lines.append(line)
+
+        # Check if this line is a section header that matches any position_hint
+        for i, chart_spec in enumerate(charts):
+            if i in embedded:
+                continue
+            hint = chart_spec.get('position_hint', '')
+            if not hint:
+                continue
+
+            # Match section headers like "### 二、行业现状" or "### 行业现状"
+            if hint in line or line.strip().endswith(hint):
+                if i < len(chart_urls):
+                    chart_url = chart_urls[i]
+                    chart_title = chart_spec.get('title', '')
+                    # Insert chart image after the section header
+                    result_lines.append(f'\n![{chart_title}]({chart_url})\n')
+                    embedded.add(i)
+                    break
+
+    # Embed any remaining charts at the end of the article (before reference sources)
+    for i, chart_spec in enumerate(charts):
+        if i not in embedded and i < len(chart_urls):
+            chart_url = chart_urls[i]
+            chart_title = chart_spec.get('title', '')
+            # Find "参考来源" or end of content
+            for j, line in enumerate(result_lines):
+                if '参考来源' in line or '**参考来源**' in line:
+                    result_lines.insert(j, f'\n![{chart_title}]({chart_url})\n')
+                    embedded.add(i)
+                    break
+            else:
+                result_lines.append(f'\n![{chart_title}]({chart_url})\n')
+                embedded.add(i)
+
+    return '\n'.join(result_lines)
 
 
 def publish_post(title: str, html_content: str, category: str, featured_media_id: int = 0) -> dict:
@@ -158,6 +239,11 @@ if __name__ == '__main__':
     md_path = sys.argv[1]
     cover_path = sys.argv[2] if len(sys.argv) > 2 else None
 
+    # Derive chart spec path from md path
+    base_path = md_path.replace('.md', '')
+    spec_path = f"{base_path}_charts.json"
+    output_dir = os.path.dirname(md_path) or '.'
+
     with open(md_path, 'r', encoding='utf-8') as f:
         md_text = f.read()
 
@@ -165,6 +251,26 @@ if __name__ == '__main__':
     title = title_match.group(1).strip() if title_match else os.path.basename(md_path)
     print(f"Title: {title}")
 
+    # Step 1: Generate charts if spec exists
+    chart_urls = []
+    chart_files = []
+    if os.path.exists(spec_path):
+        print(f"\n[Charts] Found spec: {spec_path}")
+        chart_files = generate_charts(spec_path, output_dir)
+
+        if chart_files:
+            print(f"\n[Charts] Uploading {len(chart_files)} charts to WordPress...")
+            for chart_file in chart_files:
+                media_info = upload_media(chart_file)
+                chart_urls.append(media_info['url'])
+
+            # Embed charts into markdown
+            md_text = embed_charts_in_markdown(md_text, chart_urls, spec_path)
+            print(f"[Charts] Embedded {len(chart_urls)} charts into article")
+    else:
+        print(f"[Charts] No spec found: {spec_path}, skipping chart generation")
+
+    # Step 2: Convert to HTML
     html_content = md_to_html(md_text)
     print(f"HTML size: {len(html_content)} chars")
 
@@ -174,16 +280,17 @@ if __name__ == '__main__':
         f.write(html_content)
     print(f"HTML saved: {html_path}")
 
-    # Upload cover
+    # Step 3: Upload cover
     media_id = 0
     if cover_path and os.path.exists(cover_path):
-        print(f"\n[1/2] Uploading cover: {cover_path}")
-        media_id = upload_media(cover_path)
+        print(f"\n[Cover] Uploading: {cover_path}")
+        media_info = upload_media(cover_path)
+        media_id = media_info['id']
     elif cover_path:
         print(f"⚠️  Cover not found: {cover_path}")
 
-    # Publish
-    print(f"\n[2/2] Publishing to WordPress...")
+    # Step 4: Publish
+    print(f"\n[Publishing] Publishing to WordPress...")
     category = "AI×区块链"
     result = publish_post(title, html_content, category, media_id)
     print(f"\n✅ Published!")
@@ -191,3 +298,7 @@ if __name__ == '__main__':
     print(f"URL: {result['link']}")
     if media_id > 0:
         print(f"Featured Media ID: {media_id}")
+    if chart_urls:
+        print(f"Charts: {len(chart_urls)} embedded")
+        for i, url in enumerate(chart_urls, 1):
+            print(f"  Chart {i}: {url}")

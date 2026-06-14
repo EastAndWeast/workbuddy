@@ -5,6 +5,45 @@
 
 ---
 
+## 2026-06-13 (周六)
+
+**状态**: ✅ 成功（自动化执行，模型 auto）
+**覆盖话题**:
+1. SEC Proposes Scrapping Reg NMS Rules 611 and 610(e) (June 12) — 267-page proposal to eliminate trade-through rule and locked/crossed quote protection, replacing with FINRA Rule 5310 principles-based "best execution" framework, 60-day comment period, final rule expected Q1 2027, possible early exemptive relief for tokenized stock pilots, part of "Project Crypto" framework, Galaxy Digital Alex Thorn: "one of the biggest unlocks yet", SEC Chair Paul Atkins: simplify market structure, lower costs
+2. Cecabank Launches MiCA-Regulated Crypto Custody (June 11) — €400B+ AUM Spanish wholesale custodian, partnership with Bit2Me ($280M+ daily volume), Renta 4 Banco first client, dual registration (Spanish Bank CASP Nov 2024 only financial institution, CNMV MiCA license July 2025 first B2B custodian), EU passporting to Ireland/Portugal/Luxembourg underway, B2B model for banks/brokers/wealth managers
+
+**新闻来源**:
+1. Blockonomi - SEC Proposes Eliminating Trading Rules That Blocked Tokenized Stocks on DeFi Platforms (June 12)
+2. CryptoTimes - SEC Proposes Scrapping Legacy Reg NMS Rules, Clearing Path for On-Chain Equities (June 12)
+3. The Coinomist - SEC Proposal to Free Tokenized U.S. Stocks for DeFi (June 12)
+4. CoinUnited - SEC Proposes Scrapping NMS Trade-Through Rules: A Structural Unlock (June 12)
+5. SEC.gov - Proposed Rule 34-105655 (June 12)
+6. Blockonomi - Cecabank Brings MiCA-Regulated Crypto Custody to Spanish Banks (June 12)
+7. PRNewswire - Cecabank Launches Cryptocurrency Asset Custody Service (June 11)
+8. CoinAlertNews - Cecabank Launches Crypto Custody, Joining Global Bank Push (June 11)
+
+---
+
+## 2026-06-12 (周五)
+
+**状态**: ✅ 成功（自动化执行，模型 auto）
+**覆盖话题**:
+1. Japan Revised Payment Services Act Full Effect June 13 — Expanded VASP registration categories (new intermediary business, custody wallets, OTC brokers, foreign platforms), foreign trust-type stablecoins recognized as EPI with 4 conditions, flexible reserve assets (gov bonds allowed), geo-blocking for unregistered foreign platforms, domestic asset retention orders, Travel Rule upgrade with equivalent jurisdiction list
+2. MiCA CASP Authorization Deadline July 1 — 19 days remaining, ~17% conversion rate (210/1,200+ VASPs), 990+ entities unlicensed, 14 major CEXs authorized (Coinbase/Binance/OKX/Bybit/Kraken/KuCoin EU etc.), USDT functionally purged from EU licensed exchanges, penalties up to €15M or 12.5% annual turnover, ESMA hard line: no license = no access, anti-solicitation narrowly interpreted
+
+**新闻来源**:
+1. GlobalLawExperts - Japan Payment Services Act 2026 Guide (June 10)
+2. LPA Gyosei - Japan's 2025 Payment Services Act Amendments (Jan 30)
+3. Abe Legal - Japan Payment Services Act 2026: Stablecoin Rules (June 11)
+4. MoneyCheck - Japan Finalizes Stablecoin Framework (May 19)
+5. CoinCentral - Japan FSA Clears Legal Path for Foreign Stablecoins (May 19)
+6. SpotedCrypto - MiCA July 2026 Deadline: Unlicensed Crypto Exchanges Must Stop (June 7)
+7. BitcoinMarket - MiCA Deadline July 2026: Which Exchanges Are Licensed (May 26)
+8. ESMA - Statement on the End of Transitional Periods under MiCA (April 17)
+9. Blockzeit - New SEC Framework On Tokenization Signals Industry's Maturity (June 3)
+
+---
+
 ## 2026-06-11 (周四)
 
 **状态**: ✅ 成功（自动化执行，模型 auto）
@@ -25,55 +64,3 @@
 
 ---
 
-## 2026-06-10 (周三)
-
-**状态**: ✅ 成功（自动化执行，模型 auto）
-**覆盖话题**:
-1. Japan Megabank Joint Stablecoin (June 9-10) — MUFG/SMBC/Mizuho signed MOU, target FY2026 (March 2027) issuance, trust-type structure, FSA framework amendment May 19 effective June 1, LDP backing, 7T+ AUM, JPY stablecoin market <$50M vs $311B global
-2. MiCA July 1 Enforcement Countdown — 21 days remaining, 14 trading platforms licensed EU-wide, 10 member states zero licenses (incl. Italy/Poland/Romania), ~83% of 1,200+ VASPs unlicensed, ~60% EU active users on unauthorized platforms, Poland president vetoed implementation law twice, ESMA hard line: no license = no access
-
-**新闻来源**:
-1. Blockhead - Japan's Megabanks Move Toward Joint Stablecoin Issuance (June 10)
-2. FinanceFeeds - Japanese Megabanks Unite for Historic Sovereign Trust Stablecoin Rollout (June 10)
-3. Cryptonomist - Japan Largest Banks Joint Stablecoin Issuance (June 10)
-4. CoinCentral - Japan FSA Clears Legal Path for Foreign Stablecoins (May 19)
-5. CryptoBriefing - Japan FSA Opens Qualified Path for Foreign Trust-Type Stablecoins (May 19)
-6. Cointelegraph - EU MiCA Deadline Looms for Unlicensed Crypto Exchanges (June 2026)
-7. SpazioCrypto - MiCA July 1 2026 Deadline: Only 14 EU Trading Platforms Licensed (June 9)
-8. BeInCrypto - EU Crypto Deadline Looms: Only 14 Exchanges Are Licensed (June 2026)
-9. BitcoinMarket - MiCA Compliance Tracker (2026)
-10. ItisPay - MiCA Deadline: VASP Transition Status (June 2026)
-11. DigWatch - ESMA Confirms End of MiCA Transition Period (April 20)
-
----
-## 2026-06-09 巡检修复记录
-
-**自动化失败**：18:55 执行触发 refusal + 500 internal server error（第 5 次连续失败）
-
-**巡检修复内容**（21:25 执行）：
-- 角色词：资深监管分析师 → 资深金融行业分析师
-- 搜索轮次标题：去除中文地理标签（"美国 SEC/CFTC""亚洲监管""欧洲 MiCA/ESMA""中东/新兴市场"等），改为纯英文关键词
-- 安全红线措辞：监管逻辑 → 行业逻辑，分析监管行为 → 分析政策导向
-- 文章模板、结构、字数要求、发布流程等格式**完全不变**
-
-**说明**：今日错误为 500 服务端错误而非内容政策拒绝，修复为预防性措辞优化。⚠️ 连续 5 天失败，建议人工检查模型路由。/n/n---
-
----
-
-## 2026-06-09 (周二)
-
-**状态**: ✅ 成功（手动执行，模型 auto）
-**覆盖话题**:
-1. Ondo Perps 6月9日上线 — 全球首个 RWA 永续合约平台，20倍杠杆，代币化资产作抵押品，260+代币化美股/ETF，TVL $1B+，市场份额70%+
-2. MiCA CASP 授权7月1日倒计时22天 — 14家交易所获完整授权，USDT被EEA零售端下架，Gemini/Luno退出欧盟，Binance审核中
-
-**新闻来源**:
-1. AInvest - Ondo Perps Launches June 9 (June 3)
-2. CryptoDiffer - Ondo Perps Full Launch (June 9)
-3. The Street - Ondo Is Bringing Leveraged Stock Trading On-Chain (June 3)
-4. BitcoinMarket - Best MiCA Exchanges 2026: July 1 Deadline (June 2026)
-5. Eco - MiCA-Compliant Stablecoins 2026: Full List (May 26)
-6. StudioGlobal - Ondo Finance Launches Ondo Perps (June 3)
-7. CoinAlert News - Ondo Perps: CFTC Approval (June 2)
-
----

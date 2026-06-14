@@ -1,0 +1,27 @@
+{
+  "charts": [
+    {
+      "type": "bar_h",
+      "title": "AI Agent Commerce 三层金融基础设施",
+      "data": {
+        "labels": ["法律监管层\n日本FIEA修正案", "支付结算层\nMastercard Agent Pay", "钱包资产层\nMetaMask Agent Wallet"],
+        "values": [3, 3, 3],
+        "value_labels": ["1400万账户·¥5万亿", "30+合作伙伴", "3000万+月活"],
+        "colors": ["#1a56db", "#e0742c", "#f5841f"]
+      },
+      "annotate": "48小时内三箭齐发\n法律·支付·钱包同时就位",
+      "position_hint": "二、行业现状"
+    },
+    {
+      "type": "contrast",
+      "title": "日本加密税改：55%→20%的历史性降幅",
+      "data": {
+        "labels": ["旧制度（杂项所得）", "新制度（分离申报）"],
+        "values": [55, 20],
+        "value_labels": ["最高55%", "统一20%"]
+      },
+      "annotate": "降幅63.6%\n对标股票债券税率\n机构投资者算得过账了",
+      "position_hint": "三、深度分析"
+    }
+  ]
+}

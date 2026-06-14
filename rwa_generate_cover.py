@@ -110,17 +110,27 @@ def extract_content(text: str, is_html: bool = False) -> dict:
     # 日期正则：支持 2026-05-27 / 2026/5/27 / 2026年5月27日
     DATE_RE = r'(\d{4}(?:[-/]\d{1,2}[-/]\d{1,2}|年\d{1,2}月\d{1,2}日))'
     
+    # 0. 优先提取 H1 主标题（适用于所有格式）
+    h1_m = re.search(r'^#\s+(.+)$', text, re.MULTILINE)
+    main_title = h1_m.group(1).strip() if h1_m else ""
+    if main_title:
+        info["title"] = main_title
+        # 如果 H1 不太长，也用作 focus_title
+        if len(main_title) <= 80:
+            info["focus_title"] = main_title
+
     # 1. 提取标题和日期 (RWA 早报 格式)
     title_m = re.search(rf'【?RWA\s*早报】?\s*(?:\||[|｜])\s*{DATE_RE}', text)
     if not title_m:
         title_m = re.search(rf'【?RWA\s*早报】?\s*{DATE_RE}', text)
     if not title_m:
         title_m = re.search(rf'RWA\s*早报.*?{DATE_RE}', text)
-    # AI×区块链 格式
+    # AI×区块链 格式（日期可能在正文或文件名中）
     if not title_m:
-        title_m = re.search(rf'【?AI\s*[×xX]\s*区块链】?\s*(?:\||[|｜])\s*{DATE_RE}', text)
+        title_m = re.search(rf'【?AI\s*[×xX]\s*区块链】?.*?{DATE_RE}', text)
     if not title_m:
-        title_m = re.search(rf'【?AI\s*[×xX]\s*区块链】?\s*{DATE_RE}', text)
+        # 尝试在正文任意位置找日期
+        title_m = re.search(rf'{DATE_RE}', text)
     # RWA 时评 格式
     if not title_m:
         title_m = re.search(rf'【?RWA\s*时评】?\s*(?:\||[|｜])\s*{DATE_RE}', text)
@@ -139,18 +149,32 @@ def extract_content(text: str, is_html: bool = False) -> dict:
     elif re.search(r'【?RWA\s*时评】?', text):
         info["title"] = info.get("title", "").replace("RWA 早报", "RWA 时评")
     
-    # 2. 提取新闻条目：### N. 标题 或 ## N. 标题
+    # 2. 提取新闻条目：### N. 标题 或 ## N. 标题 或 ### 一、标题（中文数字）
     headlines = []
+    # 数字编号格式：### 1. 标题
     for m in re.finditer(r'^#{2,3}\s*\d+\.\s*(.+)$', text, re.MULTILINE):
         headline = m.group(1).strip()
         headline = re.sub(r'\*\*', '', headline)
         if len(headline) > 3 and '来源' not in headline:
             headlines.append(headline)
+    # 中文数字格式：### 一、标题 或 ### 一：标题
+    if not headlines:
+        for m in re.finditer(r'^#{2,3}\s*[一二三四五六七八九十]+[、：:]\s*(.+)$', text, re.MULTILINE):
+            headline = m.group(1).strip()
+            headline = re.sub(r'\*\*', '', headline)
+            if len(headline) > 3 and '来源' not in headline:
+                headlines.append(headline)
+    # 如果还没找到，尝试提取 H1 作为焦点
+    if not headlines:
+        h1_m = re.search(r'^#\s+(.+)$', text, re.MULTILINE)
+        if h1_m:
+            headlines.append(h1_m.group(1).strip()[:80])
     
-    # 焦点 = 第一条新闻标题
-    if headlines:
+    # 焦点 = 第一条新闻标题（仅当 focus_title 仍是默认值时覆盖）
+    if headlines and info["focus_title"] == "RWA 行业今日要闻":
         info["focus_title"] = headlines[0][:80]
-        # Teaser = 所有新闻标题
+    # Teaser = 所有新闻/章节标题（始终用 headlines 更新）
+    if headlines:
         info["teasers"] = [f"• {h[:55]}" for h in headlines[:5]]
     
     # 如果上述格式没匹配到，尝试格式二的「今日焦点」+「快讯」
@@ -331,14 +355,26 @@ def generate_image(prompt: str, quality: str) -> str:
         print(f"      响应内容: {json.dumps(data, ensure_ascii=False)[:500]}")
         raise RuntimeError("Missing 'data' in API response")
 
-    b64 = data["data"][0]["b64_json"]
+    item = data["data"][0]
     usage = data.get("usage", {})
     print(f"      ✅ 生成成功，token 用量: {usage.get('total_tokens', 'N/A')}")
-    
-    # 解码保存 PNG
-    img_data = base64.b64decode(b64)
-    with open(output_path, 'wb') as f:
-        f.write(img_data)
+
+    # 兼容 b64_json 和 url 两种返回格式
+    if "b64_json" in item:
+        img_data = base64.b64decode(item["b64_json"])
+        with open(output_path, 'wb') as f:
+            f.write(img_data)
+    elif "url" in item:
+        # 通过 url 下载
+        import requests
+        img_resp = requests.get(item["url"], timeout=120)
+        img_resp.raise_for_status()
+        with open(output_path, 'wb') as f:
+            f.write(img_resp.content)
+        print(f"      🔗 通过 URL 下载: {item['url'][:80]}")
+    else:
+        print(f"      ❌ data[0] 缺少 b64_json/url 字段，keys: {list(item.keys())}")
+        raise RuntimeError("Unknown image response format")
 
     size_kb = os.path.getsize(output_path) / 1024
     print(f"      💾 已保存: {output_path} ({size_kb:.1f} KB)")

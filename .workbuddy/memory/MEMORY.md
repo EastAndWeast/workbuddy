@@ -29,8 +29,8 @@
 
 ## WordPress 发布配置
 
-- 发布脚本:
-  - RWA 文章: `/Users/bruce/WorkBuddy/Claw/rwa_auto_publish.py`
+- 发布脚本（均使用 XML-RPC）:
+  - RWA 文章: `/Users/bruce/WorkBuddy/Claw/rwa_publish_wp.py`
   - AI×区块链文章: `/Users/bruce/WorkBuddy/Claw/publish_ai_blockchain.py`
 - 配置文件: `/Users/bruce/WorkBuddy/Claw/.env` (WP_URL, WP_USER, WP_PASS)
 - 网站 URL: https://www.tianao1128.online
@@ -39,7 +39,7 @@
 
 | 类型 | 文件名格式 | 示例 |
 |------|-----------|------|
-| RWA 早报 | `rwa_report_YYYYMMDD.md` | `rwa_report_20260609.md` |
+| RWA 早报 | `rwa_morning_YYYYMMDD.md` | `rwa_morning_20260609.md` |
 | RWA 行业早报 | `rwa_industry_YYYYMMDD.md` | `rwa_industry_20260609.md` |
 | RWA 时评 | `rwa_evening_YYYYMMDD.md` | `rwa_evening_20260609.md` |
 | AI×区块链 | `ai_blockchain_YYYYMMDD.md` | `ai_blockchain_20260609.md` |

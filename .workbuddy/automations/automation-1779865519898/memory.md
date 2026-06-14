@@ -1,5 +1,24 @@
 # RWA 行业早报自动化 — 执行记忆
 
+## 2026-06-13 执行摘要
+
+- **状态**：成功
+- **主早报**：`rwa_morning_20260613.md`，3 条新闻
+- **产出**：`rwa_industry_20260613.md`，10 条速报
+- **核心主题**：RWA 进入「同步发行」时代——SpaceX 1.75 万亿 IPO 与 SPCX 链上同步发行（ACATS+DTCC 赎回真股）；深圳开出首份地方 RWA 风险提示；花旗 DDRs 全球首个银行版存托凭证
+- **3 条提炼**：SpaceX SPCX 同步上链、深圳 RWA 风险提示、花旗 DDRs
+- **7 条补充**：AVAT 纳斯达克挂牌、链上美债 142 亿、链上 RWA 338 亿新高、代币化股票 16.8 亿日交易、DTCC/Stellar、Bernstein 510 亿、Ondo VAVX ETF 获 SEC 批准
+- **主标题**：「1.75 万亿 IPO 同日上链——RWA 进入「同步发行」时代」
+
+## 2026-06-12 执行摘要
+
+- **状态**：成功
+- **主早报**：`rwa_morning_20260612.md`，3 条新闻
+- **产出**：`rwa_industry_20260612.md`，10 条速报
+- **核心主题**：SpaceX 1.75万亿IPO今日上链——史上最大发行首日即代币化，SPCX同日Solana/Bybit双通道24×7交易；代币化股票Q2新增14.9万钱包成RWA最大细分
+- **3 条提炼**：SpaceX SPCX今日上线、Archax Hedera秒级付息、SurancePlus代币化再保险
+- **7 条补充**：代币化股票Q2钱包+市值数据、Ethena×Centrifuge USDe/JAAA合作、RWA 318亿/589%增长、另类RWA 7.71亿、代币化股票钱包增速逼近传统券商、Backpack ACATS赎回机制
+
 ## 2026-06-11 执行摘要
 
 - **状态**：成功

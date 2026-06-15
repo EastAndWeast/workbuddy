@@ -79,3 +79,11 @@
 - Step 3：飞书文档创建成功 → https://my.feishu.cn/docx/KuwQdMOHCo7Ettxw6XhcsBoWnCg
 - Step 4：审核消息已发送到「RWA 早报审核群」（message_id: om_x100b6d80245720a0c442a143f5e385b）
 - 等待用户回复「通过」触发 WordPress 发布
+
+## 2026-06-15 07:35
+
+- 文件已就绪（8909 字节），无需等待
+- 标题提取：使用默认标题「RWA 早报 | 2026-06-15」（文件无 `# ` 标题行）
+- Step 3：飞书文档创建成功 → https://my.feishu.cn/docx/NLPBdUvZ5oW4iPxusd7cF77tnnd
+- Step 4：审核消息已发送到「RWA 早报审核群」（message_id: om_x100b6dc7e5aa90a4c21f496f2973532）
+- 等待用户回复「通过」触发 WordPress 发布

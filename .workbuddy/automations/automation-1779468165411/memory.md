@@ -5,6 +5,26 @@
 
 ---
 
+## 2026-06-15 (周一)
+
+**状态**: ✅ 成功（自动化执行，模型 auto）
+**覆盖话题**:
+1. China 2026 RWA Tokenization Framework (银发〔2026〕42号, Feb 6) — PBOC + 7 agencies, first legal pathway for RWA tokenization while maintaining crypto ban, three categories of offshore RWA by onshore entities (debt: NDRC/SAFE, ABS/equity: CSRC, other: CSRC-led), CSRC ABS Token Guidance same day, filing-based review with 6 prohibition scenarios, "same business same risk same rule" principle, significant details still pending (designated infrastructure, approval procedures)
+2. GENIUS Act Implementation: Comment Periods Close (June 9) — FDIC substantive standards proposal + Treasury/FinCEN/OFAC AML/sanctions compliance proposal comments both closed June 9, all 6 proposals now in final rule stage, FDIC tokenized deposit stance: technology-neutral, tokenized deposits = insured deposits if meeting 12 USC 1813(l) definition, FRB still missing from rulemaking, 2027-01-18 statutory effective date
+
+**新闻来源**:
+1. Norton Rose Fulbright - China Rolls Out Updated Crypto Framework, Establishing the Legal Regime for RWA Tokenization (April 2026)
+2. China Daily - China Clarifies Illegality of RWA Tokenization, Tightens Oversight (Feb 7, 2026)
+3. Morgan Lewis - GENIUS Act Implementation: Key Proposals and What Comes Next (April 2026)
+4. JD Supra / Morgan Lewis - GENIUS Act Implementation: Key Proposals (April 27, 2026)
+5. FDIC - Proposed Rule: GENIUS Act Requirements and Standards for FDIC-Supervised PPSI (April 10, 2026)
+6. Sullivan & Cromwell - OCC Issues Proposed Regulations Implement GENIUS Act (March 2026)
+7. InvestaX - The GENIUS Act: What It Could Mean for Tokenized RWAs (August 2025)
+8. DeFi Planet - Weekend Crypto Roundup June 2026 Week 2 (June 12, 2026)
+9. Debevoise & Plimpton - Genius Act Signed into Law (July 2025)
+
+---
+
 ## 2026-06-13 (周六)
 
 **状态**: ✅ 成功（自动化执行，模型 auto）
@@ -41,26 +61,4 @@
 7. BitcoinMarket - MiCA Deadline July 2026: Which Exchanges Are Licensed (May 26)
 8. ESMA - Statement on the End of Transitional Periods under MiCA (April 17)
 9. Blockzeit - New SEC Framework On Tokenization Signals Industry's Maturity (June 3)
-
----
-
-## 2026-06-11 (周四)
-
-**状态**: ✅ 成功（自动化执行，模型 auto）
-**覆盖话题**:
-1. US CLARITY Act Senate Setback (June 10-11) — Ethics dispute over state attorneys general enforcement clause tied to Trump crypto business, law enforcement opposition to Section 604 (Blockchain Regulatory Certainty Act) over developer liability protections, bipartisan negotiations collapsed June 10, resuming June 12, only 31 Senate session days before August recess, Lummis warns US risks "watching from sidelines", 200+ industry groups backing, 60-vote filibuster threshold not yet secured
-2. Japan Lower House Passes Crypto-as-Financial-Instruments Bill (June 10-11) — Unanimous approval by House Finance Committee, reclassifies crypto under FIEA from Payment Services Act, tax cut 55%→20% (effective 2028), ETF pathway opened (2027), insider trading ban introduced, penalties from 3→10 years imprisonment, ~50% exchanges expected to close, Nomura/SBI/JPX developing ETF products
-
-**新闻来源**:
-1. Blockonomi - CLARITY Act Faces Senate Setback as Ethics Dispute and Law Enforcement Concerns Grow (June 11)
-2. The Cryptonomist - CLARITY Act Digital Asset Regulation Faces Final Senate Hurdles (June 11)
-3. Cryptopolitan - Japan's 55% Crypto Tax Era Is Ending (June 11)
-4. OurCryptoTalk - Japan Crypto Bill Advances With 20% Tax and ETF Path (June 11)
-5. CryptoNewsBytes - Japan Passes Bill Reclassifying Crypto as Financial Instruments (April 10)
-6. Cointelegraph - Japan Regulates Crypto Assets as Financial Instruments (April 10)
-7. CoinEdition - Japan Advances 20% Crypto Tax Bill (June 11)
-8. Crypto Times - Sen. Lummis: US Will Watch From the Sidelines Without CLARITY Act (June 1)
-9. Blockonomi - CLARITY Act Faces Senate Test Over Enforcement Clause (June 9)
-
----
 

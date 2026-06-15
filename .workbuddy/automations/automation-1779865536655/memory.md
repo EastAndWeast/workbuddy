@@ -1,5 +1,13 @@
 # RWA 行业早报飞书发布 - 执行记录
 
+## 2026-06-15 08:35
+
+- **状态**: ✅ 发布成功
+- **文件**: `rwa_industry_20260615.md`（1557 bytes）
+- **标题**: SEC 推开 DeFi 之门，17 家银行建 2 万亿结算网
+- **飞书文档**: https://my.feishu.cn/docx/YkDddvDXAoGhH2xbTiNc4BpDnMg
+- **审核消息**: message_id=om_x100b6dc0321f04a4c38ddcd7dddc08e
+
 ## 2026-06-12 08:35
 
 - **状态**: ✅ 发布成功

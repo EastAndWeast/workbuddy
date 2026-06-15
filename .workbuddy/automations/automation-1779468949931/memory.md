@@ -3,6 +3,20 @@
 
 ## 最近执行记录
 
+### 2026-06-15 07:00
+- **执行状态**: ✅ 成功
+- **新闻日期**: 2026-06-10/11
+- **搜索轮数**: 3轮搜索 + 5次深度抓取
+- **生成条数**: 3条
+- **保存文件**: `/Users/bruce/WorkBuddy/Claw/rwa_morning_20260615.md`
+- **主要新闻来源**:
+  - SEC.gov / CryptoTimes / CryptoNews: SEC 6月11日正式提议废除Reg NMS规则611和610(e)，扫清代币化股票DeFi交易最大结构性障碍，60天公示期，预计2027年初落地（2026-06-11）
+  - Aju Press / DeFi Planet / Pulse News Korea: 韩国国民银行(KB Kookmin Bank) 6月10日发行1亿美元区块链数字债券，韩国商业银行首次，通过汇丰Orion平台发行，接入HKMA CMU结算（2026-06-10）
+  - Reuters/WHBL / CryptoBriefing / DBS Newsroom: 星展银行(DBS) 6月11日宣布2026下半年面向零售客户推出代币化实物黄金(DBS Physical Gold Token)，1克起投，新加坡首家（2026-06-11）
+- **今日焦点**: SEC Reg NMS 611废除（代币化股票DeFi交易里程碑）+ 韩国KB银行首次区块链债券（亚洲RWA新市场开启）+ DBS零售代币化黄金（传统银行直接下场RWA零售化）
+- **AI腔审校**: 100/100 ✅
+- **问题**: SEC Reg NMS规则BeInCrypto/CryptoNews因Cloudflare保护无法WebFetch，通过SEC官网和CryptoTimes获取完整信息
+
 ### 2026-06-13 07:55（手动补跑，模型已切换）
 - **执行状态**: ✅ 成功（手动触发）
 - **触发原因**: 06:55/07:10/07:30 三次自动化因 Quota 429 失败，用户充值/换模型后手动补跑
